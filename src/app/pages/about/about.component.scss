@@ -1,0 +1,22 @@
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.rating-box {
+  @apply bg-white rounded-lg shadow-md p-6 text-center;
+  @apply transform transition-all duration-300 hover:shadow-lg;
+  min-width: 200px;
+}
+
+.stars {
+  @apply text-2xl mb-2;
+}
+
+.rating {
+  @apply font-semibold text-gray-700;
+}

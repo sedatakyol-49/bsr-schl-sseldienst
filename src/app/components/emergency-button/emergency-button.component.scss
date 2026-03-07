@@ -1,0 +1,6 @@
+﻿.emergency-button {
+  @apply flex items-center justify-center space-x-2;
+  @apply bg-primary-700 text-white hover:bg-primary-800;
+  @apply px-4 py-3 rounded-full shadow-panel;
+  @apply transform transition-all duration-200 hover:scale-105;
+}

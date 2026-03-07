@@ -1,0 +1,57 @@
+﻿import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+
+interface PriceRow {
+  service: string;
+  timing: string;
+  price: string;
+}
+
+interface PriceGroup {
+  title: string;
+  summary: string;
+  rows: PriceRow[];
+}
+
+@Component({
+  selector: 'app-products',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.scss']
+})
+export class ProductsComponent {
+  protected readonly priceGroups: PriceGroup[] = [
+    {
+      title: 'Tueroeffnung zugefallene Tuer',
+      summary: 'Schnelle Oeffnung bei zugefallener Tuer mit Zeitstaffelung.',
+      rows: [
+        { service: 'Mo-Sa', timing: '08:00-18:00', price: '89 EUR' },
+        { service: 'Mo-Sa', timing: '18:00-08:00', price: '109 EUR' },
+        { service: 'Sonntag & Feiertage', timing: 'ganztags', price: '129 EUR' }
+      ]
+    },
+    {
+      title: 'Tueroeffnung abgeschlossene Tuer',
+      summary: 'Fuer abgeschlossene Tueren mit abgestufter Einsatzzeit.',
+      rows: [
+        { service: 'Mo-Fr', timing: '08:00-18:00', price: '119 EUR' },
+        { service: 'Mo-Fr', timing: '18:00-08:00', price: '139 EUR' },
+        { service: 'Sonntag & Feiertage', timing: 'ganztags', price: '159 EUR' }
+      ]
+    },
+    {
+      title: 'Zusatzleistungen',
+      summary: 'Weitere Leistungen werden nach Aufwand oder nach Mass berechnet.',
+      rows: [
+        { service: 'Zusatzarbeitszeit', timing: 'je Stunde', price: '89 EUR' },
+        { service: 'Anfahrtskosten', timing: 'Hin- & Rueckfahrt ab 20 km', price: '29 EUR' },
+        { service: 'Zylinderwechsel', timing: 'je nach Masse', price: '89-129 EUR zzgl. Material' },
+        { service: 'Tuerreparatur', timing: 'je nach Schaden', price: '199-299 EUR zzgl. Material' },
+        { service: 'Schlosswechsel', timing: 'je Einsatz', price: '89 EUR zzgl. Material' },
+        { service: 'Beschlag wechseln', timing: 'je Einsatz', price: '89 EUR zzgl. Material' }
+      ]
+    }
+  ];
+}

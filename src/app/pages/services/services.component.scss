@@ -1,0 +1,49 @@
+.animate-spin-slow {
+  animation: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-pulse-slow {
+  animation: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.service-icon {
+  @apply w-32 h-32 mx-auto;
+  animation: none;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.service-text {
+  @apply text-xl font-bold mt-4;
+}
+
+.icon-animate {
+  svg {
+    animation: bounce 2s ease-in-out infinite;
+  }
+}

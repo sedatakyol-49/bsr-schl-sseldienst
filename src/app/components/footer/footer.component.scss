@@ -1,0 +1,9 @@
+.social-link {
+  @apply text-gray-300 hover:text-white transition-colors;
+  @apply flex items-center justify-center;
+}
+
+.footer-link {
+  @apply hover:text-white transition-colors;
+  @apply text-sm md:text-base;
+}

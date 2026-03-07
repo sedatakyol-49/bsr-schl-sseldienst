@@ -1,0 +1,66 @@
+﻿<section class="relative overflow-hidden rounded-[2rem] bg-white shadow-soft">
+  <div class="absolute inset-x-0 top-0 h-40 bg-brand-radial opacity-80"></div>
+  <div class="container-custom relative py-16 md:py-20">
+    <div class="max-w-3xl">
+      <span class="badge">Preisliste</span>
+      <h1 class="mt-6 text-balance">Transparente Preisuebersicht fuer typische Einsaetze.</h1>
+      <p class="mt-5 section-copy">
+        Die nachfolgende Liste basiert auf der aktuellen BSR-Preisliste. Sie gibt Ihnen eine schnelle Orientierung
+        fuer typische Tueroeffnungen, Zusatzzeiten und gaengige Folgearbeiten.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container-custom grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+    <div class="space-y-6">
+      <article *ngFor="let group of priceGroups" class="surface-card p-8">
+        <div class="flex flex-col gap-3 border-b border-primary-100 pb-5 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 class="text-2xl font-extrabold text-primary-900">{{ group.title }}</h2>
+            <p class="mt-2 text-sm md:text-base">{{ group.summary }}</p>
+          </div>
+        </div>
+
+        <div class="mt-6 overflow-hidden rounded-2xl border border-primary-100">
+          <div class="grid grid-cols-[1.4fr_1fr_0.9fr] bg-primary-900 px-5 py-3 text-sm font-semibold uppercase tracking-[0.12em] text-white/85">
+            <span>Leistung</span>
+            <span>Zeit / Zusatz</span>
+            <span>Preis</span>
+          </div>
+
+          <div *ngFor="let row of group.rows; let last = last" class="grid grid-cols-[1.4fr_1fr_0.9fr] gap-4 px-5 py-4 text-sm md:text-base" [class.border-b]="!last" [class.border-primary-100]="!last">
+            <span class="font-semibold text-primary-900">{{ row.service }}</span>
+            <span class="text-secondary-600">{{ row.timing }}</span>
+            <span class="font-semibold text-primary-700">{{ row.price }}</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <aside class="space-y-6">
+      <div class="surface-card p-8">
+        <span class="badge">Hinweis</span>
+        <h2 class="mt-5 text-2xl font-extrabold text-primary-900">Was Sie vorab wissen sollten</h2>
+        <ul class="mt-5 space-y-4 text-secondary-700">
+          <li class="flex gap-3"><i class="fas fa-check mt-1 text-primary-700"></i><span>Die Preise geben typische Standardfaelle wieder und schaffen Orientierung.</span></li>
+          <li class="flex gap-3"><i class="fas fa-check mt-1 text-primary-700"></i><span>Materialkosten sind dort separat ausgewiesen, wo sie zusaetzlich anfallen.</span></li>
+          <li class="flex gap-3"><i class="fas fa-check mt-1 text-primary-700"></i><span>Bei Sonderfaellen oder groesserem Schaden besprechen wir den Aufwand direkt mit Ihnen.</span></li>
+        </ul>
+      </div>
+
+      <div class="rounded-[2rem] bg-primary-900 p-8 text-white shadow-panel">
+        <p class="text-sm font-semibold uppercase tracking-[0.16em] text-white/70">Direkter Kontakt</p>
+        <h3 class="mt-4 text-2xl font-extrabold text-white">Rueckfrage zur Preisliste?</h3>
+        <p class="mt-3 text-white/75">
+          Rufen Sie uns an, wenn Sie Ihren Fall kurz abstimmen oder einen Einsatz direkt anmelden moechten.
+        </p>
+        <div class="mt-6 flex flex-col gap-3">
+          <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
+          <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontaktformular</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
