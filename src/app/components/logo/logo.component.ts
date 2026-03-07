@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <div class="logo" title="BSR Schluesseldienst">
+    <div class="logo" title="BSR Schlüsseldienst">
       <svg viewBox="0 0 260 72" aria-hidden="true">
         <defs>
           <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
         <path d="M58 44h-6v4h6zM58 50h-4v4h4z" fill="#f7f7f7"></path>
 
         <text x="102" y="36" class="brand">BSR</text>
-        <text x="102" y="58" class="subbrand">Schluesseldienst</text>
+        <text x="102" y="58" class="subbrand">Schlüsseldienst</text>
       </svg>
     </div>
   `,

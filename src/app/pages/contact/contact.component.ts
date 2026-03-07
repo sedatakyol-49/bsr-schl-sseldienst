@@ -27,9 +27,7 @@ export class ContactComponent {
       privacy: [false, Validators.requiredTrue]
     });
 
-    emailjs.init({
-      publicKey: 'wSX5F6NjxB53pjEZ-'
-    });
+    emailjs.init({ publicKey: 'wSX5F6NjxB53pjEZ-' });
   }
 
   async onSubmit() {
@@ -58,13 +56,9 @@ ${this.contactForm.value.message}
         };
 
         await emailjs.send('service_yy7igz9', 'template_05d45ol', templateParams);
-
         this.submitSuccess = true;
         this.contactForm.reset();
-
-        setTimeout(() => {
-          this.submitSuccess = false;
-        }, 5000);
+        setTimeout(() => { this.submitSuccess = false; }, 5000);
       } catch (error) {
         console.error('Error sending email:', error);
         this.submitError = true;

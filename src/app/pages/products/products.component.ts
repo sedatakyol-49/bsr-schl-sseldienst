@@ -24,8 +24,8 @@ interface PriceGroup {
 export class ProductsComponent {
   protected readonly priceGroups: PriceGroup[] = [
     {
-      title: 'Tueroeffnung zugefallene Tuer',
-      summary: 'Schnelle Oeffnung bei zugefallener Tuer mit Zeitstaffelung.',
+      title: 'Türöffnung zugefallene Tür',
+      summary: 'Schnelle Öffnung bei zugefallener Tür mit Zeitstaffelung.',
       rows: [
         { service: 'Mo-Sa', timing: '08:00-18:00', price: '89 EUR' },
         { service: 'Mo-Sa', timing: '18:00-08:00', price: '109 EUR' },
@@ -33,8 +33,8 @@ export class ProductsComponent {
       ]
     },
     {
-      title: 'Tueroeffnung abgeschlossene Tuer',
-      summary: 'Fuer abgeschlossene Tueren mit abgestufter Einsatzzeit.',
+      title: 'Türöffnung abgeschlossene Tür',
+      summary: 'Für abgeschlossene Türen mit abgestufter Einsatzzeit.',
       rows: [
         { service: 'Mo-Fr', timing: '08:00-18:00', price: '119 EUR' },
         { service: 'Mo-Fr', timing: '18:00-08:00', price: '139 EUR' },
@@ -43,12 +43,12 @@ export class ProductsComponent {
     },
     {
       title: 'Zusatzleistungen',
-      summary: 'Weitere Leistungen werden nach Aufwand oder nach Mass berechnet.',
+      summary: 'Weitere Leistungen werden nach Aufwand oder nach Maß berechnet.',
       rows: [
         { service: 'Zusatzarbeitszeit', timing: 'je Stunde', price: '89 EUR' },
-        { service: 'Anfahrtskosten', timing: 'Hin- & Rueckfahrt ab 20 km', price: '29 EUR' },
-        { service: 'Zylinderwechsel', timing: 'je nach Masse', price: '89-129 EUR zzgl. Material' },
-        { service: 'Tuerreparatur', timing: 'je nach Schaden', price: '199-299 EUR zzgl. Material' },
+        { service: 'Anfahrtskosten', timing: 'Hin- & Rückfahrt ab 20 km', price: '29 EUR' },
+        { service: 'Zylinderwechsel', timing: 'je nach Maße', price: '89-129 EUR zzgl. Material' },
+        { service: 'Türreparatur', timing: 'je nach Schaden', price: '199-299 EUR zzgl. Material' },
         { service: 'Schlosswechsel', timing: 'je Einsatz', price: '89 EUR zzgl. Material' },
         { service: 'Beschlag wechseln', timing: 'je Einsatz', price: '89 EUR zzgl. Material' }
       ]

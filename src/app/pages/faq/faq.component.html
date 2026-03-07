@@ -2,35 +2,15 @@
   <div class="container-custom py-16 md:py-20">
     <div class="max-w-3xl">
       <span class="badge">FAQ</span>
-      <h1 class="mt-6 text-balance">Antworten auf haeufige Fragen zu Einsatz, Preisen und Regionen.</h1>
-      <p class="mt-5 section-copy">
-        Wenn Sie vorab eine kurze Einordnung moechten, finden Sie hier die wichtigsten Antworten.
-      </p>
+      <h1 class="mt-6 text-balance">Antworten auf häufige Fragen zu Einsatz, Preisen und Regionen.</h1>
+      <p class="mt-5 section-copy">Wenn Sie vorab eine kurze Einordnung möchten, finden Sie hier die wichtigsten Antworten.</p>
     </div>
-
     <div class="mx-auto mt-12 max-w-4xl space-y-4">
-      <div *ngFor="let faq of faqs; let i = index"
-           class="surface-card overflow-hidden"
-           [class.animate-slide-up]="true"
-           [style.animation-delay]="i * 80 + 'ms'">
+      <div *ngFor="let faq of faqs; let i = index" class="surface-card overflow-hidden" [class.animate-slide-up]="true" [style.animation-delay]="i * 80 + 'ms'">
         <button type="button" class="flex w-full items-start gap-4 p-6 text-left" (click)="toggleFaq(faq)">
-          <div class="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="faq.icon" />
-            </svg>
-          </div>
-          <div class="flex-1">
-            <h3 class="text-xl font-bold text-primary-900">{{ faq.question }}</h3>
-            <div [@expandCollapse]="faq.isExpanded ? 'expanded' : 'collapsed'" class="mt-2 overflow-hidden">
-              <p>{{ faq.answer }}</p>
-            </div>
-          </div>
-          <svg xmlns="http://www.w3.org/2000/svg"
-               class="mt-1 h-6 w-6 shrink-0 transform transition-transform duration-300 text-primary-700"
-               [class.rotate-180]="faq.isExpanded"
-               fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-          </svg>
+          <div class="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="faq.icon" /></svg></div>
+          <div class="flex-1"><h3 class="text-xl font-bold text-primary-900">{{ faq.question }}</h3><div [@expandCollapse]="faq.isExpanded ? 'expanded' : 'collapsed'" class="mt-2 overflow-hidden"><p>{{ faq.answer }}</p></div></div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-6 w-6 shrink-0 transform transition-transform duration-300 text-primary-700" [class.rotate-180]="faq.isExpanded" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </button>
       </div>
     </div>
@@ -41,9 +21,7 @@
   <div class="container-custom">
     <div class="rounded-[2rem] bg-primary-900 px-8 py-10 text-center text-white shadow-panel md:px-12">
       <h2 class="text-3xl font-extrabold text-white md:text-4xl">Noch Fragen?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-white/75">
-        Rufen Sie uns an oder nutzen Sie das Kontaktformular. Wir helfen schnell weiter.
-      </p>
+      <p class="mx-auto mt-4 max-w-2xl text-white/75">Rufen Sie uns an oder nutzen Sie das Kontaktformular. Wir helfen schnell weiter.</p>
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
         <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>

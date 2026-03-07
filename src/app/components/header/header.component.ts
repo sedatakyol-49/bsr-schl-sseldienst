@@ -1,5 +1,5 @@
-import { Component, HostListener } from '@angular/core';
-import { CommonModule } from '@angular/common';
+﻿import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, inject, PLATFORM_ID } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { LogoComponent } from '../logo/logo.component';
 
@@ -13,9 +13,14 @@ import { LogoComponent } from '../logo/logo.component';
 export class HeaderComponent {
   scrolled = false;
   menuOpen = false;
+  private readonly platformId = inject(PLATFORM_ID);
 
-  @HostListener('window:scroll', [])
+  @HostListener('window:scroll')
   onWindowScroll() {
+    if (!isPlatformBrowser(this.platformId)) {
+      return;
+    }
+
     this.scrolled = window.scrollY > 20;
   }
 

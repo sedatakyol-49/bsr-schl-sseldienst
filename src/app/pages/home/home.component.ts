@@ -10,31 +10,18 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  protected readonly regions = [
-    'Freiburg',
-    'Emmendingen',
-    'Ettenheim',
-    'Lahr',
-    'Offenburg',
-    'Bad Krozingen',
-    'Muellheim',
-    'Neuenburg',
-    'Weil am Rhein',
-    'Loerrach',
-    'Rheinfelden',
-    'und Umgebung'
-  ];
+  protected readonly regions = ['Freiburg', 'Emmendingen', 'Ettenheim', 'Lahr', 'Offenburg', 'Bad Krozingen', 'Müllheim', 'Neuenburg', 'Weil am Rhein', 'Lörrach', 'Rheinfelden', 'und Umgebung'];
 
   protected readonly highlights = [
-    'Schnelle Hilfe bei Tueroeffnungen, Schlosswechsel und Sicherheitsfragen.',
-    'Faire Preise mit klarer Preisliste und transparenter Kommunikation.',
-    'Zuverlaessige Einsaetze fuer Privatkunden, Vermieter und Gewerbe.'
+    'Schnelle Hilfe bei Türöffnungen und Schlosswechsel.',
+    'Faire Preise mit klarer Preisliste.',
+    'Saubere Einsätze für Privat und Gewerbe.'
   ];
 
   protected readonly trustPoints = [
     {
       title: 'Regional erreichbar',
-      description: 'Von Denzlingen aus betreuen wir Freiburg und grosse Teile von Suedbaden schnell und planbar.',
+      description: 'Von Denzlingen aus betreuen wir Freiburg und große Teile von Südbaden schnell und planbar.',
       icon: 'fa-location-dot'
     },
     {
@@ -44,7 +31,7 @@ export class HomeComponent {
     },
     {
       title: 'Fachgerechte Arbeit',
-      description: 'Wir arbeiten sauber, situationsgerecht und mit Fokus auf funktionale, sichere Loesungen.',
+      description: 'Wir arbeiten sauber, situationsgerecht und mit Fokus auf funktionale, sichere Lösungen.',
       icon: 'fa-shield-halved'
     }
   ];

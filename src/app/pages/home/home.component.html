@@ -1,39 +1,30 @@
 ﻿<section class="relative overflow-hidden rounded-[2rem] bg-brand-mesh text-white shadow-panel">
   <div class="absolute inset-0 bg-brand-radial opacity-80"></div>
   <div class="absolute inset-0 brand-grid opacity-20"></div>
-
-  <div class="container-custom relative py-16 md:py-24 lg:py-28">
-    <div class="grid items-center gap-12 lg:grid-cols-[1.2fr_0.8fr]">
-      <div class="max-w-3xl">
-        <span class="badge border-white/20 bg-white/10 text-white">BSR Schluesseldienst</span>
-        <h1 class="mt-6 text-balance text-white">Zuverlaessige Hilfe rund um Schluessel, Schloesser und Sicherheit in Freiburg und Suedbaden.</h1>
-        <p class="mt-6 max-w-2xl text-lg text-white/80 md:text-xl">
-          Ob Notfall oder Beratung: BSR Schluesseldienst ist Ihr Ansprechpartner fuer Freiburg,
-          Denzlingen und die gesamte Region. Schnell vor Ort, fachgerecht ausgefuehrt und klar kommuniziert.
-        </p>
-
-        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+  <div class="absolute -right-16 top-16 h-48 w-48 rounded-full bg-white/10 blur-3xl"></div>
+  <div class="absolute left-8 top-10 h-20 w-20 rounded-full border border-white/10 bg-white/5 blur-2xl"></div>
+  <div class="container-custom relative py-12 md:py-20 lg:py-24">
+    <div class="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+      <div class="max-w-2xl">
+        <span class="badge border-white/20 bg-white/10 text-white">BSR Schlüsseldienst</span>
+        <h1 class="mt-5 max-w-xl text-pretty text-[2.35rem] font-extrabold leading-[1.02] tracking-[-0.04em] text-white sm:text-[2.8rem] md:mt-6 md:text-[3.4rem]">Zuverlässige Hilfe für Schlüssel, Schlösser und Sicherheit.</h1>
+        <p class="mt-4 max-w-lg text-base leading-7 text-white/78 md:mt-5 md:text-lg md:leading-8">Schnell vor Ort in Freiburg, Denzlingen und Südbaden. Klar kommuniziert, fair kalkuliert und fachgerecht ausgeführt.</p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
           <a href="tel:+491777679185" class="btn btn-primary !bg-white !text-primary-900 hover:!bg-primary-50">Jetzt anrufen: 01777 679185</a>
           <a routerLink="/produkte" class="btn border border-white/20 bg-white/10 text-white hover:bg-white/20">Zur Preisliste</a>
         </div>
-
-        <div class="mt-8 grid gap-3 sm:grid-cols-3">
-          <div *ngFor="let highlight of highlights" class="rounded-2xl border border-white/10 bg-white/10 px-4 py-4 text-sm text-white/85 backdrop-blur">
-            {{ highlight }}
-          </div>
+        <div class="mt-7 grid gap-3 sm:grid-cols-3">
+          <div *ngFor="let highlight of highlights" class="rounded-2xl border border-white/10 bg-white/10 px-4 py-3.5 text-sm leading-6 text-white/85 backdrop-blur">{{ highlight }}</div>
         </div>
       </div>
-
-      <div class="surface-card relative overflow-hidden p-7 md:p-8">
+      <div class="surface-card relative overflow-hidden p-6 md:p-8">
         <div class="absolute right-0 top-0 h-32 w-32 rounded-full bg-primary-100 blur-3xl"></div>
         <div class="relative">
           <p class="text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">Einsatzgebiete</p>
-          <h2 class="mt-3 text-3xl font-extrabold text-primary-900">Regional stark in Suedbaden</h2>
-          <p class="mt-3 text-secondary-600">Wir betreuen Privatkunden, Vermieter und Gewerbe in zentralen Orten der Region.</p>
+          <h2 class="mt-3 text-2xl font-extrabold leading-tight text-primary-900 md:text-3xl">Regional stark in Südbaden</h2>
+          <p class="mt-3 text-sm leading-7 text-secondary-600 md:text-base">Wir betreuen Privatkunden, Vermieter und Gewerbe in zentralen Orten der Region.</p>
           <div class="mt-6 grid grid-cols-2 gap-3">
-            <div *ngFor="let region of regions" class="rounded-2xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm font-semibold text-primary-800">
-              {{ region }}
-            </div>
+            <div *ngFor="let region of regions" class="rounded-2xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm font-semibold text-primary-800">{{ region }}</div>
           </div>
         </div>
       </div>
@@ -45,14 +36,11 @@
   <div class="container-custom">
     <div class="mb-10 max-w-3xl">
       <span class="badge">Warum BSR</span>
-      <h2 class="section-title mt-5">Schluesseldienst mit klarem Fokus auf Tempo, Fairness und saubere Ausfuehrung.</h2>
+      <h2 class="section-title mt-5">Schlüsseldienst mit klarem Fokus auf Tempo, Fairness und saubere Ausführung.</h2>
     </div>
-
     <div class="grid gap-6 md:grid-cols-3">
       <article *ngFor="let item of trustPoints" class="surface-card p-8">
-        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-700">
-          <i class="fas" [ngClass]="item.icon"></i>
-        </div>
+        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><i class="fas" [ngClass]="item.icon"></i></div>
         <h3 class="mt-5 text-2xl font-bold text-primary-900">{{ item.title }}</h3>
         <p class="mt-3">{{ item.description }}</p>
       </article>
@@ -65,27 +53,14 @@
     <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
       <div class="surface-card p-8 md:p-10">
         <span class="badge">Leistungsspektrum</span>
-        <h2 class="section-title mt-5">Von der zugefallenen Tuer bis zum Schlosswechsel.</h2>
-        <p class="mt-4 section-copy">
-          BSR Schluesseldienst bietet schnelle Hilfe rund um Tueroeffnungen, Zylinderwechsel,
-          Reparaturen an Tueren und Beschlaegen sowie allgemeine Sicherheitsberatung.
-        </p>
+        <h2 class="section-title mt-5">Von der zugefallenen Tür bis zum Schlosswechsel.</h2>
+        <p class="mt-4 section-copy">BSR Schlüsseldienst bietet schnelle Hilfe rund um Türöffnungen, Zylinderwechsel, Reparaturen an Türen und Beschlägen sowie allgemeine Sicherheitsberatung.</p>
         <ul class="mt-6 space-y-4">
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4">
-            <i class="fas fa-check mt-1 text-primary-700"></i>
-            <span class="text-secondary-700">Tueroeffnungen fuer zugefallene und abgeschlossene Tueren.</span>
-          </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4">
-            <i class="fas fa-check mt-1 text-primary-700"></i>
-            <span class="text-secondary-700">Reparatur, Schlosswechsel und Zylinderwechsel nach Bedarf.</span>
-          </li>
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4">
-            <i class="fas fa-check mt-1 text-primary-700"></i>
-            <span class="text-secondary-700">Beratung fuer Vermieter, Hausverwaltungen und gewerbliche Objekte.</span>
-          </li>
+          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Türöffnungen für zugefallene und abgeschlossene Türen.</span></li>
+          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Reparatur, Schlosswechsel und Zylinderwechsel nach Bedarf.</span></li>
+          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Beratung für Vermieter, Hausverwaltungen und gewerbliche Objekte.</span></li>
         </ul>
       </div>
-
       <div class="rounded-[2rem] border border-primary-100 bg-white p-8 shadow-soft md:p-10">
         <div class="flex items-center justify-between gap-4 border-b border-primary-100 pb-4">
           <div>
@@ -94,28 +69,10 @@
           </div>
           <a routerLink="/produkte" class="text-sm font-semibold text-primary-700 hover:text-primary-900">Komplette Liste</a>
         </div>
-
         <div class="mt-6 space-y-4">
-          <div class="rounded-2xl bg-slate-50 px-5 py-4">
-            <div class="flex items-center justify-between gap-4">
-              <strong class="text-primary-900">Zugefallene Tuer</strong>
-              <span class="font-semibold text-primary-700">ab 89 EUR</span>
-            </div>
-            <p class="mt-2 text-sm">Mo-Sa 08:00-18:00. Abends, nachts sowie sonn- und feiertags abweichend.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4">
-            <div class="flex items-center justify-between gap-4">
-              <strong class="text-primary-900">Abgeschlossene Tuer</strong>
-              <span class="font-semibold text-primary-700">ab 119 EUR</span>
-            </div>
-            <p class="mt-2 text-sm">Mo-Fr 08:00-18:00. Fuer Nacht- und Feiertagseinsaetze gelten andere Saetze.</p>
-          </div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4">
-            <div class="flex items-center justify-between gap-4">
-              <strong class="text-primary-900">Zylinderwechsel</strong>
-              <span class="font-semibold text-primary-700">89 EUR bis 129 EUR zzgl. Material</span>
-            </div>
-          </div>
+          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-primary-900">Zugefallene Tür</strong><span class="font-semibold text-primary-700">ab 89 EUR</span></div><p class="mt-2 text-sm">Mo-Sa 08:00-18:00. Abends, nachts sowie sonn- und feiertags abweichend.</p></div>
+          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-primary-900">Abgeschlossene Tür</strong><span class="font-semibold text-primary-700">ab 119 EUR</span></div><p class="mt-2 text-sm">Mo-Fr 08:00-18:00. Für Nacht- und Feiertagseinsätze gelten andere Sätze.</p></div>
+          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-primary-900">Zylinderwechsel</strong><span class="font-semibold text-primary-700">89 EUR bis 129 EUR zzgl. Material</span></div></div>
         </div>
       </div>
     </div>
@@ -125,11 +82,8 @@
 <section class="section pt-0">
   <div class="container-custom">
     <div class="rounded-[2rem] bg-primary-900 px-8 py-10 text-center text-white shadow-panel md:px-12">
-      <h2 class="text-3xl font-extrabold text-white md:text-4xl">Direkte Hilfe oder kurze Rueckfrage?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-white/75">
-        Rufen Sie uns an oder schicken Sie uns Ihr Anliegen. Wir melden uns schnell und sagen vorab,
-        welche Leistung fuer Ihren Fall voraussichtlich relevant ist.
-      </p>
+      <h2 class="text-3xl font-extrabold text-white md:text-4xl">Direkte Hilfe oder kurze Rückfrage?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-white/75">Rufen Sie uns an oder schicken Sie uns Ihr Anliegen. Wir melden uns schnell und sagen vorab, welche Leistung für Ihren Fall voraussichtlich relevant ist.</p>
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
         <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>
