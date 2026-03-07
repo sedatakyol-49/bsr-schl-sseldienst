@@ -24,6 +24,11 @@ export class HeaderComponent {
     this.scrolled = window.scrollY > 20;
   }
 
+  @HostListener('document:keydown.escape')
+  onEscapeKey() {
+    this.closeMenu();
+  }
+
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
   }

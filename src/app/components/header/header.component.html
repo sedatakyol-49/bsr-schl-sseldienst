@@ -1,7 +1,7 @@
 ﻿<div class="fixed inset-x-0 top-0 z-50 transition-all duration-300" [class]="scrolled || menuOpen ? 'bg-white/95 shadow-soft backdrop-blur py-3' : 'bg-white/80 backdrop-blur-md py-4'">
   <div class="container-custom">
-    <nav class="relative flex items-center justify-between gap-4">
-      <a routerLink="/" class="flex items-center">
+    <nav class="relative flex items-center justify-between gap-4" aria-label="Hauptnavigation">
+      <a routerLink="/" class="flex items-center" aria-label="Zur Startseite von BSR Schlüsseldienst">
         <app-logo></app-logo>
       </a>
 
@@ -10,31 +10,40 @@
         <a routerLink="/dienstleistungen" routerLinkActive="nav-pill-active" class="nav-pill">Leistungen</a>
         <a routerLink="/produkte" routerLinkActive="nav-pill-active" class="nav-pill">Preisliste</a>
         <a routerLink="/faq" routerLinkActive="nav-pill-active" class="nav-pill">FAQ</a>
+        <a routerLink="/kontakt" routerLinkActive="nav-pill-active" class="nav-pill">Kontakt</a>
       </div>
 
       <div class="hidden md:flex items-center gap-3">
-        <a href="tel:+491777679185" class="btn btn-primary whitespace-nowrap">01777 679185</a>
+        <a href="tel:+491777679185" class="btn btn-primary whitespace-nowrap" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a>
       </div>
 
       <div class="md:hidden">
-        <button (click)="toggleMenu()" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary-100 bg-white text-primary-800 shadow-soft">
-          <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <button
+          type="button"
+          (click)="toggleMenu()"
+          class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary-100 bg-white text-primary-800 shadow-soft"
+          [attr.aria-expanded]="menuOpen"
+          aria-controls="mobile-navigation"
+          [attr.aria-label]="menuOpen ? 'Menü schließen' : 'Menü öffnen'"
+        >
+          <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
-          <svg *ngIf="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg *ngIf="menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
           </svg>
         </button>
       </div>
     </nav>
 
-    <div *ngIf="menuOpen" class="mt-3 rounded-3xl border border-primary-100 bg-white p-4 shadow-panel md:hidden">
+    <div *ngIf="menuOpen" id="mobile-navigation" class="mt-3 rounded-3xl border border-primary-100 bg-white p-4 shadow-panel md:hidden">
       <div class="flex flex-col gap-2">
         <a routerLink="/ueber-uns" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Über uns</a>
         <a routerLink="/dienstleistungen" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Leistungen</a>
         <a routerLink="/produkte" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Preisliste</a>
         <a routerLink="/faq" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">FAQ</a>
-        <a href="tel:+491777679185" class="btn btn-primary mt-2">01777 679185</a>
+        <a routerLink="/kontakt" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Kontakt</a>
+        <a href="tel:+491777679185" class="btn btn-primary mt-2" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a>
       </div>
     </div>
   </div>

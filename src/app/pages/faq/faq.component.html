@@ -7,10 +7,24 @@
     </div>
     <div class="mx-auto mt-12 max-w-4xl space-y-4">
       <div *ngFor="let faq of faqs; let i = index" class="surface-card overflow-hidden" [class.animate-slide-up]="true" [style.animation-delay]="i * 80 + 'ms'">
-        <button type="button" class="flex w-full items-start gap-4 p-6 text-left" (click)="toggleFaq(faq)">
-          <div class="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="faq.icon" /></svg></div>
-          <div class="flex-1"><h3 class="text-xl font-bold text-primary-900">{{ faq.question }}</h3><div [@expandCollapse]="faq.isExpanded ? 'expanded' : 'collapsed'" class="mt-2 overflow-hidden"><p>{{ faq.answer }}</p></div></div>
-          <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-6 w-6 shrink-0 transform transition-transform duration-300 text-primary-700" [class.rotate-180]="faq.isExpanded" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+        <button
+          type="button"
+          class="flex w-full items-start gap-4 p-6 text-left"
+          (click)="toggleFaq(faq)"
+          [attr.aria-expanded]="faq.isExpanded"
+          [attr.aria-controls]="'faq-answer-' + i"
+          [attr.id]="'faq-question-' + i"
+        >
+          <div class="mt-1 flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-700">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" [attr.d]="faq.icon" /></svg>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-primary-900">{{ faq.question }}</h3>
+            <div [@expandCollapse]="faq.isExpanded ? 'expanded' : 'collapsed'" class="mt-2 overflow-hidden" [attr.id]="'faq-answer-' + i" role="region" [attr.aria-labelledby]="'faq-question-' + i">
+              <p>{{ faq.answer }}</p>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="mt-1 h-6 w-6 shrink-0 transform transition-transform duration-300 text-primary-700" [class.rotate-180]="faq.isExpanded" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
         </button>
       </div>
     </div>
@@ -23,7 +37,7 @@
       <h2 class="text-3xl font-extrabold text-white md:text-4xl">Noch Fragen?</h2>
       <p class="mx-auto mt-4 max-w-2xl text-white/75">Rufen Sie uns an oder nutzen Sie das Kontaktformular. Wir helfen schnell weiter.</p>
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
-        <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
+        <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a>
         <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>
       </div>
     </div>

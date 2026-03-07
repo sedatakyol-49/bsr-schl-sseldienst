@@ -17,9 +17,10 @@ import { SeoService } from './services/seo.service';
     EmergencyButtonComponent
   ],
   template: `
-    <div class="flex flex-col min-h-screen">
+    <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
+    <div class="flex min-h-screen flex-col">
       <app-header></app-header>
-      <main class="flex-grow">
+      <main id="main-content" tabindex="-1" class="flex-grow">
         <router-outlet></router-outlet>
       </main>
       <app-footer></app-footer>
