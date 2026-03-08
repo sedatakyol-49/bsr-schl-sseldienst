@@ -1,34 +1,44 @@
-<section class="relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-panel">
-  <div class="absolute inset-x-0 top-0 h-40 bg-[linear-gradient(180deg,rgba(11,37,97,0.06),rgba(11,37,97,0))]"></div>
-  <div class="absolute inset-y-0 right-0 hidden w-[34%] bg-[radial-gradient(circle_at_top,rgba(47,104,221,0.12),transparent_62%)] lg:block"></div>
-  <div class="container-custom relative py-12 md:py-16 lg:py-[4.5rem]">
-    <div class="grid gap-8 lg:grid-cols-[1.12fr_0.88fr] lg:items-start lg:gap-12">
-      <div class="max-w-2xl lg:pt-2">
+<section class="hero-shell relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-panel">
+  <div class="absolute inset-x-0 top-0 h-48 bg-[linear-gradient(180deg,rgba(11,37,97,0.05),rgba(11,37,97,0))]"></div>
+  <div class="absolute right-0 top-0 hidden h-full w-[38%] bg-[radial-gradient(circle_at_top,rgba(47,104,221,0.10),transparent_58%)] lg:block"></div>
+  <div class="container-custom relative py-12 md:py-16 lg:py-[4.75rem]">
+    <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
+      <div class="max-w-2xl">
         <span class="badge">BSR Schlüsseldienst</span>
-        <h1 class="mt-5 max-w-[42rem] text-balance font-bold text-primary-900">Zuverlässige Türöffnungen, Schlosswechsel und Sicherheitslösungen in Südbaden.</h1>
-        <p class="mt-4 max-w-xl text-secondary-600">Schnell vor Ort in Freiburg, Denzlingen und Umgebung. Klare Kommunikation, nachvollziehbare Preise und saubere Ausführung ohne unnötige Dramatisierung.</p>
+        <h1 class="mt-5 max-w-[42rem] text-balance font-bold text-primary-900">Schlüsseldienst für Türöffnungen, Schlosswechsel und sachgerechte Sicherheitslösungen in Südbaden.</h1>
+        <p class="mt-4 max-w-[39rem] text-secondary-600">BSR Schlüsseldienst betreut Privatkunden, Vermieter und Gewerbe in Freiburg, Denzlingen und Umgebung. Der Fokus liegt auf zügiger Verfügbarkeit, klarer Preisstruktur und fachgerechter Ausführung.</p>
         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
           <a href="tel:+491777679185" class="btn btn-primary">Jetzt anrufen</a>
           <a routerLink="/produkte" class="btn btn-secondary">Zur Preisliste</a>
         </div>
-        <div class="mt-7 grid gap-3 sm:grid-cols-3">
-          <div *ngFor="let highlight of highlights" class="rounded-2xl border border-slate-200 bg-slate-50 px-4 py-4 text-[0.94rem] font-semibold leading-6 text-secondary-700">{{ highlight }}</div>
+        <div class="mt-8 grid gap-4 border-t border-slate-200 pt-6 sm:grid-cols-3">
+          <div *ngFor="let highlight of highlights" class="hero-stat">
+            <span class="hero-stat-label">{{ highlight }}</span>
+          </div>
         </div>
       </div>
-      <div class="space-y-5 lg:pt-1">
-        <div class="hero-image-card overflow-hidden rounded-[2rem] border border-primary-100/80 shadow-panel">
+      <div class="space-y-4">
+        <div class="hero-image-card overflow-hidden rounded-[2rem] border border-slate-200 shadow-panel">
           <img
             src="assets/images/locksmith-hero.jpg"
             alt="Schlüsseldienst bei der Arbeit an einer Tür"
-            class="h-[260px] w-full object-cover object-center md:h-[320px]"
+            class="h-[320px] w-full object-cover object-center md:h-[420px]"
           />
+          <div class="hero-image-overlay">
+            <div class="hero-image-caption">
+              <span class="hero-note-label">Vor Ort in der Region</span>
+              <strong>Freiburg, Denzlingen und Südbaden</strong>
+            </div>
+          </div>
         </div>
-        <div class="hidden rounded-[1.75rem] border border-slate-200 bg-white/80 px-5 py-4 shadow-soft lg:block">
-          <div class="flex items-center gap-3 text-[0.92rem] font-semibold text-secondary-700">
-            <span class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-primary-50 text-primary-800">
-              <i class="fas fa-shield-halved"></i>
-            </span>
-            <span>Saubere Ausführung, faire Kommunikation und schnelle Verfügbarkeit in der Region.</span>
+        <div class="grid gap-3 sm:grid-cols-2">
+          <div class="hero-note">
+            <span class="hero-note-label">Arbeitsweise</span>
+            <strong>Situationsgerecht und sauber</strong>
+          </div>
+          <div class="hero-note">
+            <span class="hero-note-label">Kommunikation</span>
+            <strong>Vorab nachvollziehbar</strong>
           </div>
         </div>
       </div>
@@ -39,8 +49,8 @@
         <div class="flex flex-col gap-5 border-b border-white/70 pb-5 md:flex-row md:items-start md:justify-between">
           <div class="max-w-2xl">
             <p class="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-primary-700">Einsatzgebiete</p>
-            <h2 class="mt-3 text-[1.55rem] font-bold leading-tight text-primary-900 md:text-[1.9rem]">Regional stark, seriös kalkuliert, schnell erreichbar.</h2>
-            <p class="mt-4 text-secondary-700">Wir betreuen Privatkunden, Vermieter und Gewerbe in wichtigen Orten der Region und kommunizieren Leistungen vorab so klar wie möglich.</p>
+            <h2 class="mt-3 text-[1.55rem] font-bold leading-tight text-primary-900 md:text-[1.9rem]">Regional erreichbar und auf kurze Wege ausgerichtet.</h2>
+            <p class="mt-4 text-secondary-700">Die Einsatzorte decken Freiburg sowie wichtige Standorte in Südbaden ab. Für viele Anfragen ist dadurch eine zügige Terminierung möglich.</p>
           </div>
           <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-primary-800 shadow-soft md:flex">
             <i class="fas fa-shield-halved text-xl"></i>
@@ -56,15 +66,15 @@
 
 <section class="section pb-8 md:pb-10 lg:pb-12">
   <div class="container-custom">
-    <div class="mb-10 max-w-3xl">
+    <div class="mb-8 max-w-3xl">
       <span class="badge">Warum BSR</span>
-      <h2 class="section-title mt-5">Schlüsseldienst mit klarem Fokus auf Tempo, Fairness und saubere Ausführung.</h2>
+      <h2 class="section-title mt-5">Drei Punkte, auf die es bei einem seriösen Schlüsseldienst ankommt.</h2>
     </div>
     <div class="grid gap-6 md:grid-cols-3">
-      <article *ngFor="let item of trustPoints" class="surface-card p-8">
-        <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><i class="fas" [ngClass]="item.icon"></i></div>
-        <h3 class="mt-5 text-[1.3rem] font-bold text-primary-900 md:text-[1.45rem]">{{ item.title }}</h3>
-        <p class="mt-3">{{ item.description }}</p>
+      <article *ngFor="let item of trustPoints" class="surface-card p-7 md:p-8">
+        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><i class="fas" [ngClass]="item.icon"></i></div>
+        <h3 class="mt-4 text-[1.18rem] font-bold text-primary-900 md:text-[1.35rem]">{{ item.title }}</h3>
+        <p class="mt-2">{{ item.description }}</p>
       </article>
     </div>
   </div>
@@ -76,14 +86,7 @@
       <div class="surface-card p-8 md:p-10">
         <span class="badge">Leistungsspektrum</span>
         <h2 class="section-title mt-5">Von der zugefallenen Tür bis zum Schlosswechsel.</h2>
-        <p class="mt-4 section-copy">BSR Schlüsseldienst bietet schnelle Hilfe rund um Türöffnungen, Zylinderwechsel, Reparaturen an Türen und Beschlägen sowie allgemeine Sicherheitsberatung.</p>
-        <div class="mt-6 overflow-hidden rounded-[1.5rem] border border-slate-200">
-          <img
-            src="assets/images/locksmith-keys.jpg"
-            alt="Schlüsselübergabe als Symbol für Sicherheit und Zugang"
-            class="h-52 w-full object-cover object-center"
-          />
-        </div>
+        <p class="mt-4 section-copy">Das Leistungsspektrum umfasst Türöffnungen, Zylinderwechsel, Schlosswechsel, kleinere Reparaturen an Türen und Beschlägen sowie allgemeine Beratung zu sicherheitsrelevanten Komponenten.</p>
         <ul class="mt-6 space-y-4">
           <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Türöffnungen für zugefallene und abgeschlossene Türen.</span></li>
           <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Reparatur, Schlosswechsel und Zylinderwechsel nach Bedarf.</span></li>
@@ -94,7 +97,7 @@
         <div class="flex items-center justify-between gap-4 border-b border-primary-100 pb-4">
           <div>
             <p class="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-primary-700">Preise im Blick</p>
-            <h3 class="mt-2 text-[1.5rem] font-bold text-primary-900 md:text-[1.7rem]">Wichtige Positionen aus der Preisliste</h3>
+            <h3 class="mt-2 text-[1.5rem] font-bold text-primary-900 md:text-[1.7rem]">Ausgewählte Positionen aus der Preisliste</h3>
           </div>
           <a routerLink="/produkte" class="text-[0.96rem] font-semibold text-primary-700 hover:text-primary-900">Komplette Liste</a>
         </div>
@@ -111,8 +114,8 @@
 <section class="section pt-0">
   <div class="container-custom">
     <div class="rounded-[2rem] bg-primary-900 px-8 py-10 text-center text-white shadow-panel md:px-12">
-      <h2 class="text-[1.75rem] font-bold text-white md:text-[2.2rem]">Direkte Hilfe oder kurze Rückfrage?</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-white/78">Rufen Sie uns an oder schicken Sie uns Ihr Anliegen. Wir melden uns schnell und sagen vorab, welche Leistung für Ihren Fall voraussichtlich relevant ist.</p>
+      <h2 class="text-[1.75rem] font-bold text-white md:text-[2.2rem]">Direkter Kontakt für Anfragen und Einsätze.</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-white/78">Rufen Sie uns an oder senden Sie eine Nachricht. Wir geben eine erste Einschätzung und besprechen das weitere Vorgehen so klar wie möglich.</p>
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
         <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>
