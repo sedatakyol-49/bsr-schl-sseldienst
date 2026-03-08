@@ -1,3 +1,14 @@
-﻿:host {
+:host {
   display: block;
+}
+
+.hero-image-card img {
+  filter: saturate(0.94) contrast(1.02);
+}
+
+.hero-panel {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(239, 244, 255, 0.92)),
+    radial-gradient(circle at top right, rgba(47, 104, 221, 0.12), transparent 45%);
+  box-shadow: 0 24px 60px rgba(8, 27, 72, 0.08);
 }

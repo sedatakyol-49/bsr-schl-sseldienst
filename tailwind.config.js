@@ -1,4 +1,4 @@
-﻿/** @type {import(''tailwindcss'').Config} */
+/** @type {import(''tailwindcss'').Config} */
 module.exports = {
   content: ['./src/**/*.{html,ts}'],
   theme: {
@@ -53,8 +53,8 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['Manrope', 'sans-serif'],
-        display: ['Manrope', 'sans-serif']
+        sans: ['Source Sans 3', 'sans-serif'],
+        display: ['Source Sans 3', 'sans-serif']
       },
       height: {
         hero: '38rem'

@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,7 @@
   }
 
   html {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Source Sans 3', sans-serif;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
   }
@@ -18,8 +18,8 @@
   body {
     @apply bg-slate-50 text-secondary-800 antialiased;
     background-image:
-      radial-gradient(circle at top, rgba(151, 184, 255, 0.18), transparent 35%),
-      linear-gradient(180deg, #f8fbff 0%, #f6f8fc 38%, #ffffff 100%);
+      radial-gradient(circle at top, rgba(148, 163, 184, 0.14), transparent 34%),
+      linear-gradient(180deg, #f8fafc 0%, #f4f6fa 42%, #ffffff 100%);
     min-height: 100vh;
   }
 
@@ -28,19 +28,19 @@
   }
 
   h1 {
-    @apply text-3xl md:text-4xl lg:text-5xl;
+    @apply text-[2rem] leading-[1.08] md:text-[2.45rem] lg:text-[2.9rem];
   }
 
   h2 {
-    @apply text-2xl md:text-3xl;
+    @apply text-[1.65rem] leading-tight md:text-[2rem];
   }
 
   h3 {
-    @apply text-xl md:text-2xl;
+    @apply text-[1.22rem] leading-snug md:text-[1.45rem];
   }
 
   p {
-    @apply leading-7 text-secondary-600;
+    @apply text-base leading-7 text-secondary-600 md:text-[1.03rem];
   }
 
   a, button {
@@ -68,23 +68,23 @@
   }
 
   .section {
-    @apply py-16 md:py-20 lg:py-24;
+    @apply py-12 md:py-14 lg:py-16;
   }
 
   .surface-card {
-    @apply rounded-3xl border border-white/70 bg-white/90 shadow-soft backdrop-blur;
+    @apply rounded-3xl border border-slate-200/90 bg-white shadow-soft;
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-extrabold text-primary-900;
+    @apply text-[1.65rem] font-bold text-primary-900 md:text-[2rem];
   }
 
   .section-copy {
-    @apply text-base md:text-lg text-secondary-600;
+    @apply text-base text-secondary-600 md:text-[1.03rem];
   }
 
   .btn {
-    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition duration-200 ease-out;
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3 text-[0.98rem] font-semibold transition duration-200 ease-out;
   }
 
   .btn-primary {
@@ -96,11 +96,11 @@
   }
 
   .badge {
-    @apply inline-flex items-center rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-primary-700;
+    @apply inline-flex items-center rounded-full border border-primary-200 bg-primary-50 px-3 py-1 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-primary-700;
   }
 
   .nav-pill {
-    @apply rounded-full px-4 py-2 text-sm font-semibold text-secondary-600 transition hover:bg-primary-50 hover:text-primary-800;
+    @apply rounded-full px-4 py-2 text-[0.95rem] font-semibold text-secondary-600 transition hover:bg-primary-50 hover:text-primary-800;
   }
 
   .nav-pill-active {
