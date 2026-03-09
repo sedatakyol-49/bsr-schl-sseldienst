@@ -7,12 +7,11 @@
   @apply transition-all duration-300 hover:-translate-y-1;
   min-height: 68px;
   background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.22), transparent 32%),
-    linear-gradient(135deg, #ef4444 0%, #dc2626 42%, #991b1b 100%);
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 32%),
+    linear-gradient(135deg, #0b2561 0%, #0f327f 48%, #143f9c 100%);
   box-shadow:
-    0 18px 36px rgba(153, 27, 27, 0.28),
-    inset 0 1px 0 rgba(255, 255, 255, 0.16);
-  animation: emergencyBreath 3.4s ease-in-out infinite;
+    0 18px 36px rgba(8, 27, 72, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(14px);
 }
 
@@ -30,8 +29,8 @@
   position: absolute;
   inset: 0;
   transform: translateX(-135%);
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.22), transparent);
-  animation: emergencyShine 4.2s ease-in-out infinite;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  animation: emergencyShine 6s ease-in-out infinite;
   pointer-events: none;
 }
 
@@ -46,13 +45,13 @@
 }
 
 .emergency-icon-ping {
-  @apply absolute inset-0 rounded-full bg-white/20;
-  animation: emergencyPing 2.4s ease-out infinite;
+  @apply absolute inset-0 rounded-full bg-white/10;
+  animation: emergencyPing 3.2s ease-out infinite;
 }
 
 .emergency-icon {
-  @apply relative flex h-11 w-11 items-center justify-center rounded-full bg-white text-red-600;
-  box-shadow: 0 8px 24px rgba(127, 29, 29, 0.22);
+  @apply relative flex h-11 w-11 items-center justify-center rounded-full bg-white text-primary-700;
+  box-shadow: 0 8px 24px rgba(8, 27, 72, 0.16);
 }
 
 .emergency-icon i {
@@ -68,7 +67,7 @@
 }
 
 .emergency-badge {
-  @apply inline-flex items-center rounded-full bg-white/20 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white;
+  @apply inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white;
 }
 
 .emergency-status {
@@ -86,14 +85,14 @@
 @keyframes emergencyBreath {
   0%, 100% {
     box-shadow:
-      0 18px 36px rgba(153, 27, 27, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      0 18px 36px rgba(8, 27, 72, 0.24),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
     transform: translateY(0);
   }
   50% {
     box-shadow:
-      0 22px 48px rgba(220, 38, 38, 0.34),
-      inset 0 1px 0 rgba(255, 255, 255, 0.22);
+      0 22px 48px rgba(15, 50, 127, 0.28),
+      inset 0 1px 0 rgba(255, 255, 255, 0.18);
     transform: translateY(-1px);
   }
 }
@@ -127,8 +126,8 @@
     @apply w-full justify-start gap-2 px-3 py-2.5;
     min-height: 58px;
     box-shadow:
-      0 12px 22px rgba(153, 27, 27, 0.22),
-      inset 0 1px 0 rgba(255, 255, 255, 0.16);
+      0 12px 22px rgba(8, 27, 72, 0.2),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
   }
 
   .emergency-icon-wrap {

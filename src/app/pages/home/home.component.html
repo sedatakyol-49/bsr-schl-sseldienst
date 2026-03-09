@@ -1,22 +1,27 @@
 <section class="hero-shell relative overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-panel">
-  <div class="absolute inset-x-0 top-0 h-48 bg-[linear-gradient(180deg,rgba(11,37,97,0.05),rgba(11,37,97,0))]"></div>
-  <div class="absolute right-0 top-0 hidden h-full w-[38%] bg-[radial-gradient(circle_at_top,rgba(47,104,221,0.10),transparent_58%)] lg:block"></div>
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(47,104,221,0.16),transparent_35%),radial-gradient(circle_at_bottom_right,rgba(8,27,72,0.08),transparent_30%)]"></div>
+  <div class="absolute inset-x-0 top-0 h-48 bg-[linear-gradient(180deg,rgba(11,37,97,0.08),rgba(11,37,97,0))]"></div>
+
   <div class="container-custom relative py-12 md:py-16 lg:py-[4.75rem]">
     <div class="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:gap-14">
       <div class="max-w-2xl">
         <span class="badge">BSR Schlüsseldienst</span>
-        <h1 class="mt-5 max-w-[42rem] text-balance font-bold text-primary-900">Schlüsseldienst für Türöffnungen, Schlosswechsel und sachgerechte Sicherheitslösungen in Südbaden.</h1>
-        <p class="mt-4 max-w-[39rem] text-secondary-600">BSR Schlüsseldienst betreut Privatkunden, Vermieter und Gewerbe in Freiburg, Denzlingen und Umgebung. Der Fokus liegt auf zügiger Verfügbarkeit, klarer Preisstruktur und fachgerechter Ausführung.</p>
+        <h1 class="mt-5 max-w-[36rem] text-balance">Schlüsseldienst in Freiburg und Südbaden.</h1>
+        <p class="mt-4 max-w-[30rem] text-secondary-600">Türöffnung, Schlosswechsel und schnelle Hilfe ohne Umwege.</p>
+
         <div class="mt-7 flex flex-col gap-3 sm:flex-row">
           <a href="tel:+491777679185" class="btn btn-primary">Jetzt anrufen</a>
-          <a routerLink="/produkte" class="btn btn-secondary">Zur Preisliste</a>
+          <a routerLink="/produkte" class="btn btn-secondary">Preise ansehen</a>
         </div>
+
         <div class="mt-8 grid gap-4 border-t border-slate-200 pt-6 sm:grid-cols-3">
           <div *ngFor="let highlight of highlights" class="hero-stat">
             <span class="hero-stat-label">{{ highlight }}</span>
           </div>
         </div>
+
       </div>
+
       <div class="space-y-4">
         <div class="hero-image-card overflow-hidden rounded-[2rem] border border-slate-200 shadow-panel">
           <img
@@ -25,80 +30,208 @@
             class="h-[320px] w-full object-cover object-center md:h-[420px]"
           />
         </div>
+
         <div class="grid gap-3 sm:grid-cols-2">
           <div class="hero-note">
-            <span class="hero-note-label">Arbeitsweise</span>
-            <strong>Situationsgerecht und sauber</strong>
+            <span class="hero-note-label">Erstgespräch</span>
+            <strong>Situation vorab sauber eingeordnet</strong>
           </div>
           <div class="hero-note">
-            <span class="hero-note-label">Kommunikation</span>
-            <strong>Vorab nachvollziehbar</strong>
+            <span class="hero-note-label">Vor Ort</span>
+            <strong>Ruhig, sachgerecht und nachvollziehbar</strong>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="mt-8 md:mt-10">
-      <div class="hero-panel rounded-[2rem] border border-primary-100/80 p-7 md:p-9">
-        <div class="flex flex-col gap-5 border-b border-white/70 pb-5 md:flex-row md:items-start md:justify-between">
-          <div class="max-w-2xl">
-            <p class="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-primary-700">Einsatzgebiete</p>
-            <h2 class="mt-3 text-[1.55rem] font-bold leading-tight text-primary-900 md:text-[1.9rem]">Regional erreichbar und auf kurze Wege ausgerichtet.</h2>
-            <p class="mt-4 text-secondary-700">Die Einsatzorte decken Freiburg sowie wichtige Standorte in Südbaden ab. Für viele Anfragen ist dadurch eine zügige Terminierung möglich.</p>
-          </div>
-          <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-white/80 text-primary-800 shadow-soft md:flex">
-            <i class="fas fa-shield-halved text-xl"></i>
-          </div>
-        </div>
-        <div class="mt-6 grid gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          <div *ngFor="let region of regions" class="rounded-2xl border border-white/80 bg-white/90 px-4 py-3 text-[0.92rem] font-semibold text-primary-900 shadow-[0_10px_24px_rgba(8,27,72,0.05)]">{{ region }}</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section pb-8 md:pb-10 lg:pb-12">
-  <div class="container-custom">
-    <div class="mb-8 max-w-3xl">
-      <span class="badge">Warum BSR</span>
-      <h2 class="section-title mt-5">Drei Punkte, auf die es bei einem seriösen Schlüsseldienst ankommt.</h2>
-    </div>
-    <div class="grid gap-6 md:grid-cols-3">
-      <article *ngFor="let item of trustPoints" class="surface-card p-7 md:p-8">
-        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary-50 text-primary-700"><i class="fas" [ngClass]="item.icon"></i></div>
-        <h3 class="mt-4 text-[1.18rem] font-bold text-primary-900 md:text-[1.35rem]">{{ item.title }}</h3>
-        <p class="mt-2">{{ item.description }}</p>
+    <div class="hero-band mt-8 grid gap-4 md:mt-10 md:grid-cols-3">
+      <article *ngFor="let item of trustPoints" class="hero-band-card">
+        <span class="hero-band-value">{{ item.value }}</span>
+        <h2 class="mt-3 text-[1.2rem] font-bold text-primary-900">{{ item.title }}</h2>
+        <p class="mt-2 text-[0.98rem] text-secondary-700">{{ item.description }}</p>
       </article>
     </div>
   </div>
 </section>
 
-<section class="section pt-8 md:pt-10 lg:pt-12">
+<section class="shape-band-section">
+  <div class="shape-band-top" aria-hidden="true"></div>
+  <div class="container-custom relative z-[1] -mt-10 pb-8 md:-mt-14 md:pb-10">
+    <div class="contact-highlight-grid">
+      <article *ngFor="let item of contactHighlights" class="contact-highlight-card">
+        <div class="contact-highlight-icon">
+          <i class="fas" [ngClass]="item.icon"></i>
+        </div>
+        <div>
+          <p class="contact-highlight-label">{{ item.title }}</p>
+          <strong class="contact-highlight-value">{{ item.value }}</strong>
+          <p class="contact-highlight-detail">{{ item.detail }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section pb-8 md:pb-10">
   <div class="container-custom">
-    <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+    <div class="grid gap-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-start">
       <div class="surface-card p-8 md:p-10">
-        <span class="badge">Leistungsspektrum</span>
-        <h2 class="section-title mt-5">Von der zugefallenen Tür bis zum Schlosswechsel.</h2>
-        <p class="mt-4 section-copy">Das Leistungsspektrum umfasst Türöffnungen, Zylinderwechsel, Schlosswechsel, kleinere Reparaturen an Türen und Beschlägen sowie allgemeine Beratung zu sicherheitsrelevanten Komponenten.</p>
-        <ul class="mt-6 space-y-4">
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Türöffnungen für zugefallene und abgeschlossene Türen.</span></li>
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Reparatur, Schlosswechsel und Zylinderwechsel nach Bedarf.</span></li>
-          <li class="flex items-start gap-3 rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><i class="fas fa-check mt-1 text-primary-700"></i><span class="text-secondary-700">Beratung für Vermieter, Hausverwaltungen und gewerbliche Objekte.</span></li>
-        </ul>
+        <span class="badge">So läuft es ab</span>
+        <h2 class="section-title mt-5">Mehr Vertrauen durch einen Ablauf, der auf der Startseite direkt verständlich ist.</h2>
+        <p class="mt-4 section-copy">Der professionelle Eindruck entsteht nicht nur durch Farben oder Schatten, sondern durch Klarheit. Deshalb ist der Ablauf auf drei einfache Schritte reduziert.</p>
+
+        <div class="mt-8 space-y-5">
+          <div *ngFor="let step of workflowSteps; let i = index" class="workflow-step">
+            <div class="workflow-index">{{ i + 1 }}</div>
+            <div>
+              <h3 class="text-[1.08rem] font-bold text-primary-900">{{ step.title }}</h3>
+              <p class="mt-2 text-[0.98rem] text-secondary-700">{{ step.description }}</p>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="grid gap-4">
+        <button
+          *ngFor="let card of serviceCards"
+          type="button"
+          class="service-card text-left"
+          [class.service-card-expanded]="card.isExpanded"
+          (click)="toggleService(card.id)"
+          [attr.aria-expanded]="card.isExpanded"
+        >
+          <div class="flex items-start gap-4">
+            <div class="service-card-icon">
+              <i class="fas" [ngClass]="card.icon"></i>
+            </div>
+
+            <div class="min-w-0 flex-1">
+              <span class="service-card-eyebrow">{{ card.eyebrow }}</span>
+              <h3 class="mt-2 text-[1.22rem] font-bold text-primary-900 md:text-[1.35rem]">{{ card.title }}</h3>
+              <p class="mt-3 text-[1rem] text-secondary-700">{{ card.summary }}</p>
+
+              <div [@expandCollapse]="card.isExpanded ? 'expanded' : 'collapsed'" class="overflow-hidden">
+                <ul class="service-card-list mt-5">
+                  <li *ngFor="let bullet of card.bullets" class="service-card-list-item">
+                    <i class="fas fa-check text-primary-700"></i>
+                    <span>{{ bullet }}</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="service-card-chevron" [class.rotate-180]="card.isExpanded">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="assurance-section section pt-0">
+  <div class="assurance-shape" aria-hidden="true"></div>
+  <div class="container-custom relative z-[1]">
+    <div class="mb-8 max-w-3xl">
+      <span class="badge">Vertrauen und Erreichbarkeit</span>
+      <h2 class="section-title mt-5">Formaler, klarer und etwas näher an der Sprache klassischer Schlüsseldienst-Seiten.</h2>
+      <p class="mt-4 section-copy">Der Bereich übersetzt das, was Kunden von solchen Seiten erwarten: Erreichbarkeit, Preisorientierung, telefonische Beratung und Notdienst in einer sofort erfassbaren Darstellung.</p>
+    </div>
+
+    <div class="assurance-grid">
+      <article *ngFor="let card of assuranceCards" class="assurance-card">
+        <div class="assurance-card-icon">
+          <i class="fas" [ngClass]="card.icon"></i>
+        </div>
+        <div>
+          <h3 class="text-[1.05rem] font-bold uppercase tracking-[0.08em] text-primary-900">{{ card.title }}</h3>
+          <p class="mt-3 text-[0.98rem] leading-7 text-secondary-700">{{ card.description }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section pt-8 md:pt-10">
+  <div class="container-custom">
+    <div class="grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
       <div class="rounded-[2rem] border border-primary-100 bg-white p-8 shadow-soft md:p-10">
         <div class="flex items-center justify-between gap-4 border-b border-primary-100 pb-4">
           <div>
-            <p class="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-primary-700">Preise im Blick</p>
-            <h3 class="mt-2 text-[1.5rem] font-bold text-primary-900 md:text-[1.7rem]">Ausgewählte Positionen aus der Preisliste</h3>
+            <p class="text-[0.74rem] font-bold uppercase tracking-[0.14em] text-primary-700">Google Rezensionen</p>
+            <h2 class="mt-2 text-[1.5rem] font-bold text-primary-900 md:text-[1.75rem]">Sichtbarer Vertrauensbeweis direkt auf der Startseite.</h2>
           </div>
-          <a routerLink="/produkte" class="text-[0.96rem] font-semibold text-primary-700 hover:text-primary-900">Komplette Liste</a>
+          <a *ngIf="reviewsData" [href]="reviewsData.reviewUrl" target="_blank" rel="noreferrer" class="hidden text-[0.96rem] font-semibold text-primary-700 hover:text-primary-900 md:inline-flex">
+            Zu Google
+          </a>
         </div>
-        <div class="mt-6 space-y-4">
-          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-[1rem] text-primary-900">Zugefallene Tür</strong><span class="text-[0.98rem] font-semibold text-primary-700">ab 89 EUR</span></div><p class="mt-2 text-[0.92rem]">Mo-Sa 08:00-18:00. Abends, nachts sowie sonn- und feiertags abweichend.</p></div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-[1rem] text-primary-900">Abgeschlossene Tür</strong><span class="text-[0.98rem] font-semibold text-primary-700">ab 119 EUR</span></div><p class="mt-2 text-[0.92rem]">Mo-Fr 08:00-18:00. Für Nacht- und Feiertagseinsätze gelten andere Sätze.</p></div>
-          <div class="rounded-2xl bg-slate-50 px-5 py-4"><div class="flex items-center justify-between gap-4"><strong class="text-[1rem] text-primary-900">Zylinderwechsel</strong><span class="text-[0.98rem] font-semibold text-primary-700">89 EUR bis 129 EUR zzgl. Material</span></div></div>
+
+        <div *ngIf="reviewsData?.reviewCount && reviewsData as activeReviews" class="review-summary mt-6">
+          <div class="review-summary-score">
+            <strong class="text-[2rem] leading-none text-primary-900">{{ activeReviews.rating | number:'1.1-1' }}</strong>
+            <div class="flex gap-1 text-sm text-amber-400">
+              <i *ngFor="let star of stars" class="fas fa-star"></i>
+            </div>
+          </div>
+          <p class="text-[0.98rem] leading-7 text-secondary-700">Basierend auf {{ activeReviews.reviewCount }} Google Rezensionen für {{ activeReviews.businessName }}.</p>
+        </div>
+
+        <div *ngIf="reviewsData?.reviews?.length" class="mt-6 grid gap-4">
+          <article *ngFor="let review of reviewsData?.reviews" class="review-card">
+            <div class="review-card-head">
+              <div class="review-card-author">
+                <div class="review-avatar">{{ review.authorName.charAt(0) }}</div>
+                <div>
+                  <strong class="text-[1.08rem] text-primary-900">{{ review.authorName }}</strong>
+                  <p class="mt-1 text-[0.92rem] text-secondary-500">{{ review.relativeDate }}</p>
+                </div>
+              </div>
+              <div class="flex gap-1 text-[0.82rem] text-amber-400">
+                <i *ngFor="let star of stars" class="fas fa-star" [class.opacity-30]="star > review.rating"></i>
+              </div>
+            </div>
+            <p class="review-card-copy">“{{ review.comment }}”</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="surface-card p-8 md:p-10">
+        <span class="badge">Einsatzgebiete und Preise</span>
+        <h2 class="section-title mt-5">Regional erreichbar und mit Preisbeispielen direkt eingeordnet.</h2>
+        <p class="mt-4 section-copy">Gerade in dieser Branche wirkt eine Seite dann professionell, wenn sie nicht nur etwas behauptet, sondern Einsatzgebiet und Preise direkt sichtbar macht.</p>
+
+        <div class="mt-6 grid gap-3 sm:grid-cols-2">
+          <div *ngFor="let region of regions" class="region-chip">{{ region }}</div>
+        </div>
+
+        <div class="mt-8 space-y-4">
+          <div class="price-row">
+            <div>
+              <strong class="text-[1rem] text-primary-900">Zugefallene Tür</strong>
+              <p class="mt-2 text-[0.92rem] text-secondary-600">Mo-Sa 08:00-18:00</p>
+            </div>
+            <span class="price-tag">ab 89 EUR</span>
+          </div>
+          <div class="price-row">
+            <div>
+              <strong class="text-[1rem] text-primary-900">Abgeschlossene Tür</strong>
+              <p class="mt-2 text-[0.92rem] text-secondary-600">Tagsüber, abweichend nach Uhrzeit</p>
+            </div>
+            <span class="price-tag">ab 119 EUR</span>
+          </div>
+          <div class="price-row">
+            <div>
+              <strong class="text-[1rem] text-primary-900">Zylinderwechsel</strong>
+              <p class="mt-2 text-[0.92rem] text-secondary-600">zzgl. Material nach Auswahl</p>
+            </div>
+            <span class="price-tag">89-129 EUR</span>
+          </div>
+        </div>
+
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a routerLink="/produkte" class="btn btn-secondary">Komplette Preisliste</a>
+          <a routerLink="/kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
         </div>
       </div>
     </div>
@@ -108,8 +241,8 @@
 <section class="section pt-0">
   <div class="container-custom">
     <div class="rounded-[2rem] bg-primary-900 px-8 py-10 text-center text-white shadow-panel md:px-12">
-      <h2 class="text-[1.75rem] font-bold text-white md:text-[2.2rem]">Direkter Kontakt für Anfragen und Einsätze.</h2>
-      <p class="mx-auto mt-4 max-w-2xl text-white/78">Rufen Sie uns an oder senden Sie eine Nachricht. Wir geben eine erste Einschätzung und besprechen das weitere Vorgehen so klar wie möglich.</p>
+      <h2 class="text-[1.8rem] font-bold text-white md:text-[2.25rem]">Direkter Kontakt für Anfragen, Türöffnungen und Schlosswechsel.</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-white/80">Rufen Sie direkt an oder schreiben Sie über das Kontaktformular. Die erste Einordnung erfolgt klar und ohne unnötige Umwege.</p>
       <div class="mt-8 flex flex-col gap-4 sm:flex-row sm:justify-center">
         <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
         <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>
