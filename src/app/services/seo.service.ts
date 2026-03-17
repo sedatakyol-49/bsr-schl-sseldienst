@@ -68,7 +68,7 @@ export class SeoService {
       name: 'BSR Schlüsseldienst',
       url: this.domain,
       telephone: '+491777679185',
-      email: 'bsr-schluesseldienst@outlook.de',
+      email: 'Info@bsr-schluesseldienst.de',
       address: {
         '@type': 'PostalAddress',
         streetAddress: 'Hessenstraße 3',

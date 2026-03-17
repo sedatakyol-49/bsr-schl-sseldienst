@@ -38,7 +38,7 @@ export class ContactComponent {
 
       try {
         const templateParams = {
-          email: 'bsr-schluesseldienst@outlook.de',
+          email: 'Info@bsr-schluesseldienst.de',
           name: this.contactForm.value.name,
           from_email: this.contactForm.value.email,
           title: this.contactForm.value.subject,

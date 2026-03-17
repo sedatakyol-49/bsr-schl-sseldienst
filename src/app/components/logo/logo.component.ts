@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
       height: 52px;
       max-width: 100%;
       object-fit: contain;
+      mix-blend-mode: multiply;
+      filter: contrast(1.04) saturate(0.94);
     }
 
     @media (max-width: 768px) {

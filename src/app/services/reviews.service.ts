@@ -11,6 +11,8 @@ export interface CustomerReview {
   rating: number;
   relativeDate: string;
   comment: string;
+  ownerResponse?: string;
+  ownerResponseDate?: string;
   publishTime?: string;
   profilePhotoUrl?: string;
   authorUrl?: string;
@@ -66,16 +68,54 @@ export class ReviewsService {
   private readonly manualReviews: BusinessReviews = {
     businessName: 'BSR Schlüsseldienst',
     rating: 5,
-    reviewCount: 2,
+    reviewCount: 5,
     reviewUrl: environment.googleReviewUrl,
     source: 'manual',
     reviews: [
       {
+        id: 'manual-fabio-chiello',
+        authorName: 'Fabio Chiello',
+        rating: 5,
+        relativeDate: 'vor 2 Tagen',
+        comment: 'Ich bin äußerst zufrieden mit dem Service dieses Schlossers! Er war sehr professionell, freundlich und unglaublich schnell. Die Tür wurde ohne Probleme geöffnet, obwohl ich die Schlüssel versehentlich drinnen vergessen hatte.',
+        ownerResponse: 'Vielen Dank für Ihre positive Bewertung Herr Chiello!',
+        ownerResponseDate: 'vor 2 Tagen'
+      },
+      {
+        id: 'manual-peter-voigt',
+        authorName: 'Peter Voigt',
+        rating: 5,
+        relativeDate: 'vor 2 Tagen',
+        comment: 'So sieht perfekter Service aus! Pünktlich zum Termin erschienen, schnelle, saubere Arbeit und extrem freundlich. Besten Dank!',
+        ownerResponse: 'Vielen Dank für Ihre positive Bewertung Herr Voigt!',
+        ownerResponseDate: 'vor einem Monat'
+      },
+      {
+        id: 'manual-lm-z',
+        authorName: 'LM Z',
+        rating: 5,
+        relativeDate: 'vor 3 Tagen',
+        comment: 'Schnell da gewesen, schnell die Tür geöffnet und super freundlich :)',
+        ownerResponse: 'Vielen Dank für Ihre positive Bewertung Frau Z!',
+        ownerResponseDate: 'vor 2 Tagen'
+      },
+      {
         id: 'manual-maxim-malzew',
         authorName: 'Maxim Malzew',
         rating: 5,
-        relativeDate: 'vor 5 Tagen',
-        comment: 'Super schneller und professioneller Service! Der Schlüsseldienst war innerhalb kürzester Zeit vor Ort und hat die Tür ohne Schäden geöffnet. Sehr freundlicher Mitarbeiter, der alles transparent erklärt hat. Man merkt sofort, dass hier mit Erfahrung und Seriosität gearbeitet wird. Kann ich wirklich jedem weiterempfehlen, der schnell und zuverlässig Hilfe braucht. Vielen Dank nochmal!'
+        relativeDate: 'vor 2 Wochen',
+        comment: 'Super schneller und professioneller Service! Der Schlüsseldienst war innerhalb kürzester Zeit vor Ort und hat die Tür ohne Schäden geöffnet. Sehr freundlicher Mitarbeiter, der alles transparent erklärt hat.',
+        ownerResponse: 'Vielen Dank für Ihre positive Bewertung Herr Malzew!',
+        ownerResponseDate: 'vor 2 Wochen'
+      },
+      {
+        id: 'manual-bibek-thapa',
+        authorName: 'bibek thapa',
+        rating: 5,
+        relativeDate: 'vor 2 Tagen',
+        comment: 'Wir hatten uns aus unserer Wohnung ausgesperrt. Wir riefen ihn an, und der Service war schnell und hilfreich. Die Mitarbeiter waren professionell und freundlich. Ich kann sie nur empfehlen, falls Sie einen Notfall in Ihrer Wohnung haben.',
+        ownerResponse: 'Vielen Dank für Ihre positive Bewertung Herr Thapa!',
+        ownerResponseDate: 'vor 1 Tag'
       }
     ]
   };
@@ -148,7 +188,6 @@ export class ReviewsService {
 
   private mapPlaceDetails(place: GooglePlaceDetails): BusinessReviews {
     const reviews = (place.reviews ?? [])
-      .slice(0, 6)
       .map((review, index) => ({
         id: review.name ?? `google-review-${index}`,
         authorName: review.authorAttribution?.displayName ?? 'Google-Nutzer',
