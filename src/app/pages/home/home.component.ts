@@ -56,12 +56,14 @@ export class HomeComponent implements OnInit {
     {
       title: 'Schlosswechsel',
       description: 'Zylinder- und Schlosswechsel nach Verlust, Defekt, Mieterwechsel oder Sicherheitsbedarf.',
-      icon: 'fa-key'
+      icon: 'fa-key',
+      image: 'assets/images/Schlosswechsel.jpeg'
     },
     {
       title: 'Sicherheitstechnik',
       description: 'Beratung und passende Lösungen rund um Schließsysteme, Beschläge und zusätzliche Absicherung.',
-      icon: 'fa-shield-halved'
+      icon: 'fa-shield-halved',
+      image: 'assets/images/scherhitstechnike.jpeg'
     },
     {
       title: 'Briefkastenservice',
