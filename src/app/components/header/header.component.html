@@ -1,11 +1,11 @@
-﻿<div class="fixed inset-x-0 top-0 z-50 transition-all duration-300" [class]="scrolled || menuOpen ? 'bg-white/95 shadow-soft backdrop-blur py-3' : 'bg-white/80 backdrop-blur-md py-4'">
+<div class="fixed inset-x-0 top-0 z-50 bg-white transition-all duration-300" [class]="scrolled || menuOpen ? 'shadow-soft py-3' : 'py-4'">
   <div class="container-custom">
     <nav class="relative flex items-center justify-between gap-4" aria-label="Hauptnavigation">
       <a routerLink="/" class="flex items-center" aria-label="Zur Startseite von BSR Schlüsseldienst">
         <app-logo></app-logo>
       </a>
 
-      <div class="hidden md:flex items-center gap-2 rounded-full border border-primary-100 bg-white/90 px-3 py-2 shadow-soft">
+      <div class="hidden md:flex items-center gap-2 rounded-full border border-primary-100 bg-white px-3 py-2 shadow-soft">
         <a routerLink="/ueber-uns" routerLinkActive="nav-pill-active" class="nav-pill">Über uns</a>
         <a routerLink="/dienstleistungen" routerLinkActive="nav-pill-active" class="nav-pill">Leistungen</a>
         <a routerLink="/produkte" routerLinkActive="nav-pill-active" class="nav-pill">Preisliste</a>

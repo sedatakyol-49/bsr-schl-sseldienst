@@ -81,6 +81,11 @@
                                                                         "glob": "sitemap.xml",
                                                                         "input": "src",
                                                                         "output": "/"
+                                                                      },
+                                                                      {
+                                                                        "glob": "**/*",
+                                                                        "input": "src/backend",
+                                                                        "output": "/"
                                                                       }
                                                                     ],
                                                                     "index": "src/index.html",

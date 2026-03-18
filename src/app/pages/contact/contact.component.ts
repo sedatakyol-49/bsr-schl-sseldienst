@@ -1,8 +1,14 @@
-﻿import { Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import emailjs from '@emailjs/browser';
+import { firstValueFrom } from 'rxjs';
+
+interface ContactResponse {
+  success: boolean;
+  message?: string;
+}
 
 @Component({
   selector: 'app-contact',
@@ -17,58 +23,67 @@ export class ContactComponent {
   submitSuccess = false;
   submitError = false;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private readonly fb: FormBuilder,
+    private readonly http: HttpClient
+  ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: [''],
       subject: ['', Validators.required],
       message: ['', Validators.required],
+      website: [''],
       privacy: [false, Validators.requiredTrue]
     });
-
-    emailjs.init({ publicKey: 'wSX5F6NjxB53pjEZ-' });
   }
 
-  async onSubmit() {
-    if (this.contactForm.valid) {
-      this.submitting = true;
-      this.submitSuccess = false;
-      this.submitError = false;
-
-      try {
-        const templateParams = {
-          email: 'Info@bsr-schluesseldienst.de',
-          name: this.contactForm.value.name,
-          from_email: this.contactForm.value.email,
-          title: this.contactForm.value.subject,
-          phone: this.contactForm.value.phone,
-          content: `
-Neue Nachricht von ${this.contactForm.value.name}
-
-Betreff: ${this.contactForm.value.subject}
-E-Mail: ${this.contactForm.value.email}
-Telefon: ${this.contactForm.value.phone || 'Nicht angegeben'}
-
-Nachricht:
-${this.contactForm.value.message}
-          `.trim()
-        };
-
-        await emailjs.send('service_yy7igz9', 'template_05d45ol', templateParams);
-        this.submitSuccess = true;
-        this.contactForm.reset();
-        setTimeout(() => { this.submitSuccess = false; }, 5000);
-      } catch (error) {
-        console.error('Error sending email:', error);
-        this.submitError = true;
-      } finally {
-        this.submitting = false;
-      }
-    } else {
+  async onSubmit(): Promise<void> {
+    if (!this.contactForm.valid) {
       Object.keys(this.contactForm.controls).forEach(key => {
         this.contactForm.get(key)?.markAsTouched();
       });
+      return;
+    }
+
+    this.submitting = true;
+    this.submitSuccess = false;
+    this.submitError = false;
+
+    try {
+      const payload = {
+        name: this.contactForm.value.name,
+        email: this.contactForm.value.email,
+        phone: this.contactForm.value.phone,
+        subject: this.contactForm.value.subject,
+        message: this.contactForm.value.message,
+        website: this.contactForm.value.website
+      };
+
+      await firstValueFrom(
+        this.http.post<ContactResponse>('contact.php', payload, {
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+      );
+
+      this.submitSuccess = true;
+      this.contactForm.reset({
+        name: '',
+        email: '',
+        phone: '',
+        subject: '',
+        message: '',
+        website: '',
+        privacy: false
+      });
+      setTimeout(() => { this.submitSuccess = false; }, 5000);
+    } catch (error) {
+      console.error('Error sending contact form:', error);
+      this.submitError = true;
+    } finally {
+      this.submitting = false;
     }
   }
 }

@@ -169,65 +169,6 @@
   box-shadow: 0 18px 36px rgba(8, 27, 72, 0.06);
 }
 
-.service-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  margin: -1.6rem -1.6rem 1.2rem;
-  border-radius: 1.6rem 1.6rem 1rem 1rem;
-  padding: 1.1rem;
-  min-height: 14rem;
-  background: linear-gradient(180deg, #fbfdff, #f4f8fd);
-}
-
-.service-image img {
-  display: block;
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 12.5rem;
-  object-fit: contain;
-  object-position: center;
-  border-radius: 0.9rem;
-  box-shadow: 0 10px 24px rgba(8, 27, 72, 0.08);
-}
-
-.service-image-compact {
-  justify-content: center;
-  margin: 0 0 1rem;
-  min-height: auto;
-  padding: 0;
-  background: transparent;
-}
-
-.service-image-compact img {
-  width: auto;
-  max-width: 8rem;
-  max-height: none;
-  border-radius: 1rem;
-}
-
-.service-card-compact h3 {
-  margin-top: 0;
-}
-
-.service-card-compact p {
-  margin-top: 0.6rem;
-}
-
-.service-icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border-radius: 1rem;
-  background: #eef4ff;
-  color: #143f9c;
-  font-size: 1.1rem;
-}
-
 .service-card h3,
 .price-item h3 {
   margin: 1rem 0 0;
@@ -470,18 +411,6 @@
 
   .intro-contact-phone {
     font-size: 1.5rem;
-  }
-
-  .service-image img {
-    max-height: 10.5rem;
-  }
-
-  .service-image {
-    min-height: 12rem;
-  }
-
-  .service-image-compact img {
-    max-width: 7rem;
   }
 
   .video-frame video {

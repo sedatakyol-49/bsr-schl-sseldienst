@@ -101,13 +101,8 @@
     </div>
 
     <div class="services-grid">
-      <article *ngFor="let service of serviceCards" class="service-card" [class.service-card-compact]="service.imageVariant === 'compact'">
-        <div *ngIf="service.image" class="service-image" [class.service-image-compact]="service.imageVariant === 'compact'">
-          <img [src]="service.image" [alt]="service.title + ' von BSR Schlüsseldienst'" />
-        </div>
-        <div *ngIf="!service.image" class="service-icon">
-          <i class="fas" [ngClass]="service.icon"></i>
-        </div>
+      <article *ngFor="let service of serviceCards" class="service-card">
+        <app-service-media [src]="service.image" [iconClass]="service.icon" [alt]="service.title + ' von BSR Schlüsseldienst'"></app-service-media>
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
       </article>

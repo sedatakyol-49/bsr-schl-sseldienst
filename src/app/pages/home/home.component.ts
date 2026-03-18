@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
 import { PageImageComponent } from '../../components/page-image/page-image.component';
+import { ServiceMediaComponent } from '../../components/service-media/service-media.component';
 import { BusinessReviews, ReviewsService } from '../../services/reviews.service';
 
 interface ServiceCard {
@@ -10,7 +11,6 @@ interface ServiceCard {
   description: string;
   icon: string;
   image?: string;
-  imageVariant?: 'default' | 'compact';
 }
 
 interface PricingItem {
@@ -28,7 +28,7 @@ interface FaqItem {
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, PageImageComponent],
+  imports: [CommonModule, RouterLink, PageImageComponent, ServiceMediaComponent],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
@@ -67,8 +67,7 @@ export class HomeComponent implements OnInit {
       title: 'Briefkastenservice',
       description: 'Öffnung, Reparatur und Austausch von Briefkasten- und Schließanlagen für Wohnobjekte.',
       icon: 'fa-envelope-open-text',
-      image: 'assets/images/briefkasten-foto.jpeg',
-      imageVariant: 'compact'
+      image: 'assets/images/briefkasten-foto.jpeg'
     }
   ];
 
