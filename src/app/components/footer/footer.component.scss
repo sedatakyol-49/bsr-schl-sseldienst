@@ -1,16 +1,1 @@
-﻿.social-link {
-  @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-semibold text-white/90 transition;
-  @apply hover:border-white/30 hover:bg-white/15 hover:text-white;
-}
 
-.social-link i {
-  @apply text-base;
-}
-
-.social-link-muted {
-  @apply cursor-default border-white/10 bg-white/5 text-white/65;
-}
-
-.footer-link {
-  @apply text-sm transition-colors hover:text-white md:text-base;
-}

@@ -6,7 +6,8 @@
                     "start":  "ng serve",
                     "dev":  "ng serve",
                     "build":  "ng build --configuration production",
-                    "serve:ssr:demo":  "node dist/demo/server/server.mjs"
+                    "serve:ssr:demo":  "node dist/demo/server/server.mjs",
+                    "contact:test":  "powershell -ExecutionPolicy Bypass -File scripts/serve-contact-local.ps1"
                 },
     "dependencies":  {
                          "@angular/animations":  "19.2.14",
