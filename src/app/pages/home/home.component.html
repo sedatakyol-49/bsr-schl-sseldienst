@@ -50,7 +50,6 @@
           <div class="review-card-head">
             <div>
               <strong>{{ review.authorName }}</strong>
-              <p>{{ review.relativeDate }}</p>
             </div>
             <div class="review-stars">
               <i *ngFor="let star of stars" class="fas fa-star" [class.opacity-30]="star > review.rating"></i>
@@ -60,7 +59,7 @@
           <div *ngIf="review.ownerResponse" class="review-response">
             <div class="review-response-head">
               <strong>BSR Schlüsseldienst</strong>
-              <span>Inhaber{{ review.ownerResponseDate ? ' · ' + review.ownerResponseDate : '' }}</span>
+              <span>Inhaber</span>
             </div>
             <p>{{ review.ownerResponse }}</p>
           </div>
@@ -194,3 +193,4 @@
     </div>
   </div>
 </section>
+
