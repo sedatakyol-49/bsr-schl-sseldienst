@@ -1,5 +1,5 @@
-<section class="relative overflow-hidden rounded-[2rem] bg-white shadow-soft">
-  <div class="container-custom py-14 md:py-16">
+<section class="page-hero">
+  <div class="container-custom page-hero-inner">
     <div class="max-w-3xl">
       <span class="badge">Kontakt</span>
       <h1 class="mt-5 max-w-3xl text-balance">Direkter Kontakt für Einsatz, Rückfrage oder Termin.</h1>
@@ -8,9 +8,9 @@
   </div>
 </section>
 
-<section class="section">
+<section class="page-band">
   <div class="container-custom grid gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-    <div class="surface-card p-8 md:p-10">
+    <div class="page-card p-8 md:p-10">
       <h2 class="text-2xl font-extrabold text-primary-900 md:text-3xl">Kontaktformular</h2>
       <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-8 space-y-6" novalidate>
         <div class="form-group"><label for="name" class="form-label">Name *</label><input id="name" type="text" formControlName="name" class="form-input" [attr.aria-invalid]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" aria-describedby="name-error" [class.border-error-500]="contactForm.get('name')?.touched && contactForm.get('name')?.invalid"><div *ngIf="contactForm.get('name')?.touched && contactForm.get('name')?.invalid" id="name-error" class="form-error">Bitte geben Sie Ihren Namen ein.</div></div>
@@ -19,20 +19,20 @@
         <div class="form-group"><label for="subject" class="form-label">Betreff *</label><input id="subject" type="text" formControlName="subject" class="form-input" [attr.aria-invalid]="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid" aria-describedby="subject-error" [class.border-error-500]="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid"><div *ngIf="contactForm.get('subject')?.touched && contactForm.get('subject')?.invalid" id="subject-error" class="form-error">Bitte geben Sie einen Betreff ein.</div></div>
         <div class="form-group"><label for="message" class="form-label">Nachricht *</label><textarea id="message" rows="5" formControlName="message" class="form-input" [attr.aria-invalid]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" aria-describedby="message-error" [class.border-error-500]="contactForm.get('message')?.touched && contactForm.get('message')?.invalid"></textarea><div *ngIf="contactForm.get('message')?.touched && contactForm.get('message')?.invalid" id="message-error" class="form-error">Bitte geben Sie Ihre Nachricht ein.</div></div>
         <input type="text" formControlName="website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="rounded-2xl border border-primary-100 bg-primary-50 px-4 py-4"><label for="privacy" class="flex items-start gap-3 text-sm text-secondary-700"><input id="privacy" type="checkbox" formControlName="privacy" class="mt-1 h-4 w-4 rounded border-primary-200 text-primary-700 focus:ring-primary-500" [attr.aria-invalid]="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" aria-describedby="privacy-error"><span>Ich stimme der <a routerLink="/datenschutz" class="font-semibold text-primary-700 hover:text-primary-900">Datenschutzerklärung</a> zu.</span></label><div *ngIf="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" id="privacy-error" class="form-error mt-2">Bitte stimmen Sie der Datenschutzerklärung zu.</div></div>
+        <div class="rounded-md border border-primary-100 bg-primary-50 px-4 py-4"><label for="privacy" class="flex items-start gap-3 text-sm text-secondary-700"><input id="privacy" type="checkbox" formControlName="privacy" class="mt-1 h-4 w-4 rounded border-primary-200 text-primary-700 focus:ring-primary-500" [attr.aria-invalid]="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" aria-describedby="privacy-error"><span>Ich stimme der <a routerLink="/datenschutz" class="font-semibold text-primary-700 hover:text-primary-900">Datenschutzerklärung</a> zu.</span></label><div *ngIf="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" id="privacy-error" class="form-error mt-2">Bitte stimmen Sie der Datenschutzerklärung zu.</div></div>
         <button type="submit" class="btn btn-primary w-full" [disabled]="submitting" [attr.aria-busy]="submitting"><span *ngIf="!submitting">Nachricht senden</span><span *ngIf="submitting">Wird gesendet...</span></button>
-        <div *ngIf="submitSuccess" class="rounded-2xl border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800" role="status" aria-live="polite">Ihre Nachricht wurde gesendet. Wir melden uns schnellstmöglich zurück.</div>
-        <div *ngIf="submitError" class="rounded-2xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.</div>
+        <div *ngIf="submitSuccess" class="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800" role="status" aria-live="polite">Ihre Nachricht wurde gesendet. Wir melden uns schnellstmöglich zurück.</div>
+        <div *ngIf="submitError" class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.</div>
       </form>
     </div>
 
     <div class="space-y-6">
-      <div class="surface-card p-8">
+      <div class="page-card p-8">
         <h2 class="text-2xl font-extrabold text-primary-900 md:text-3xl">Kontaktinformationen</h2>
         <p class="mt-4">Sie erreichen uns telefonisch, per WhatsApp oder per E-Mail.</p>
         <div class="mt-8 space-y-6">
           <div class="flex items-start gap-4"><div class="contact-icon" aria-hidden="true"><i class="fas fa-location-dot"></i></div><div><h3 class="text-lg font-bold text-primary-900 md:text-xl">Adresse</h3><address class="mt-2 not-italic text-secondary-600"><p>BSR Schlüsseldienst</p><p>Hessenstraße 3</p><p>79211 Denzlingen</p><p>Deutschland</p></address></div></div>
-          <div class="flex items-start gap-4"><div class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></div><div><h3 class="text-lg font-bold text-primary-900 md:text-xl">Telefon & WhatsApp</h3><div class="mt-2 space-y-2"><a href="tel:+491777679185" class="block text-secondary-700 hover:text-primary-800" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a><a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-700 transition hover:border-green-300 hover:bg-green-100 hover:text-green-800" aria-label="WhatsApp-Chat mit BSR Schlüsseldienst öffnen"><i class="fab fa-whatsapp text-base" aria-hidden="true"></i>WhatsApp starten</a></div></div></div>
+          <div class="flex items-start gap-4"><div class="contact-icon" aria-hidden="true"><i class="fas fa-phone"></i></div><div><h3 class="text-lg font-bold text-primary-900 md:text-xl">Telefon & WhatsApp</h3><div class="mt-2 space-y-2"><a href="tel:+491777679185" class="block text-secondary-700 hover:text-primary-800" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a><a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-md border border-green-200 bg-green-50 px-4 py-2 text-sm font-semibold text-green-700 transition hover:border-green-300 hover:bg-green-100 hover:text-green-800" aria-label="WhatsApp-Chat mit BSR Schlüsseldienst öffnen"><i class="fab fa-whatsapp text-base" aria-hidden="true"></i>WhatsApp starten</a></div></div></div>
           <div class="flex items-start gap-4"><div class="contact-icon" aria-hidden="true"><i class="fas fa-envelope"></i></div><div><h3 class="text-lg font-bold text-primary-900 md:text-xl">E-Mail</h3><a href="mailto:Info@bsr-schluesseldienst.de" class="mt-2 inline-block text-secondary-700 hover:text-primary-800">Info&#64;bsr-schluesseldienst.de</a></div></div>
         </div>
       </div>
