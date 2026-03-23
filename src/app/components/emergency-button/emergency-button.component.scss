@@ -1,164 +1,183 @@
-﻿:host {
+:host {
   display: block;
 }
 
-.emergency-button {
-  @apply relative flex items-center gap-3 overflow-hidden rounded-[1.5rem] px-4 py-3 text-white;
-  @apply transition-all duration-300 hover:-translate-y-1;
-  min-height: 68px;
-  background:
-    radial-gradient(circle at top left, rgba(255, 255, 255, 0.14), transparent 32%),
-    linear-gradient(135deg, #0b2561 0%, #0f327f 48%, #143f9c 100%);
-  box-shadow:
-    0 18px 36px rgba(8, 27, 72, 0.24),
-    inset 0 1px 0 rgba(255, 255, 255, 0.12);
+.contact-fab-shell {
+  position: fixed;
+  right: 1rem;
+  bottom: 6rem;
+  z-index: 55;
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.contact-fab-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-width: 16rem;
+  padding: 1rem;
+  border: 1px solid rgba(151, 180, 211, 0.38);
+  border-radius: 1.35rem;
+  background: linear-gradient(180deg, rgba(132, 163, 197, 0.97), rgba(113, 145, 181, 0.97));
+  box-shadow: 0 20px 40px rgba(44, 83, 126, 0.22);
   backdrop-filter: blur(14px);
-}
-
-.emergency-button::before {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  border-radius: 1.4rem;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02));
+  opacity: 0;
   pointer-events: none;
+  transform: translateX(1rem);
+  transition: opacity 0.24s ease, transform 0.24s ease;
 }
 
-.emergency-button::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  transform: translateX(-135%);
-  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.12), transparent);
-  animation: emergencyShine 6s ease-in-out infinite;
-  pointer-events: none;
+.contact-fab-panel-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
 }
 
-.emergency-icon-wrap,
-.emergency-copy {
-  position: relative;
-  z-index: 1;
+.contact-fab-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-decoration: none;
 }
 
-.emergency-icon-wrap {
-  @apply relative flex h-11 w-11 shrink-0 items-center justify-center;
+.contact-fab-link:hover {
+  color: #ffffff;
+  opacity: 0.96;
 }
 
-.emergency-icon-ping {
-  @apply absolute inset-0 rounded-full bg-white/10;
-  animation: emergencyPing 3.2s ease-out infinite;
+.contact-fab-link-icon {
+  display: inline-flex;
+  height: 2.4rem;
+  width: 2.4rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  background: rgba(244, 249, 253, 0.98);
+  color: #355f92;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75), 0 8px 18px rgba(25, 54, 92, 0.14);
 }
 
-.emergency-icon {
-  @apply relative flex h-11 w-11 items-center justify-center rounded-full bg-white text-primary-700;
-  box-shadow: 0 8px 24px rgba(8, 27, 72, 0.16);
+.contact-fab-link-icon .fa-whatsapp {
+  color: #25d366;
 }
 
-.emergency-icon i {
-  font-size: 0.95rem;
+.contact-fab-toggle {
+  display: inline-flex;
+  height: 3.7rem;
+  width: 3.7rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  cursor: pointer;
+  background: linear-gradient(180deg, #f7fbff, #d8e5f1);
+  color: #355f92;
+  box-shadow: 0 12px 28px rgba(40, 78, 122, 0.26);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.emergency-copy {
-  @apply flex min-w-0 flex-col items-start leading-tight;
+.contact-fab-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(40, 78, 122, 0.3);
 }
 
-.emergency-topline {
-  @apply mb-1 flex flex-wrap items-center gap-2;
-}
-
-.emergency-badge {
-  @apply inline-flex items-center rounded-full bg-white/10 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-[0.18em] text-white;
-}
-
-.emergency-status {
-  @apply text-[11px] font-semibold text-white/85;
-}
-
-.emergency-title {
-  @apply text-base font-extrabold tracking-tight text-white md:text-lg;
-}
-
-.emergency-number {
-  @apply text-sm font-semibold text-white/90;
-}
-
-@keyframes emergencyBreath {
-  0%, 100% {
-    box-shadow:
-      0 18px 36px rgba(8, 27, 72, 0.24),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
-    transform: translateY(0);
-  }
-  50% {
-    box-shadow:
-      0 22px 48px rgba(15, 50, 127, 0.28),
-      inset 0 1px 0 rgba(255, 255, 255, 0.18);
-    transform: translateY(-1px);
-  }
-}
-
-@keyframes emergencyPing {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.55;
-  }
-  70% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.35);
-    opacity: 0;
-  }
-}
-
-@keyframes emergencyShine {
-  0%, 58%, 100% {
-    transform: translateX(-135%);
-  }
-  74% {
-    transform: translateX(135%);
-  }
+.contact-fab-toggle i {
+  font-size: 1.35rem;
 }
 
 @media (max-width: 767px) {
-  .emergency-button {
-    @apply w-full justify-start gap-2 px-3 py-2.5;
-    min-height: 58px;
-    box-shadow:
-      0 12px 22px rgba(8, 27, 72, 0.2),
-      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  .contact-fab-shell {
+    right: 1rem;
+    bottom: 1rem;
+    align-items: flex-end;
   }
 
-  .emergency-icon-wrap {
-    @apply h-10 w-10;
+  .contact-fab-panel {
+    position: absolute;
+    right: 0;
+    bottom: 4.5rem;
+    min-width: min(18rem, calc(100vw - 2rem));
+    max-width: min(18rem, calc(100vw - 2rem));
+    padding: 0.9rem;
+    border-radius: 1.1rem;
+    transform: translateY(0.8rem);
   }
 
-  .emergency-icon {
-    @apply h-10 w-10;
+  .contact-fab-panel-open {
+    transform: translateY(0);
   }
 
-  .emergency-copy {
-    width: 100%;
+  .contact-fab-link {
+    font-size: 0.9rem;
   }
 
-  .emergency-topline {
-    @apply mb-0.5 gap-1.5;
+  .contact-fab-link-icon {
+    height: 2.35rem;
+    width: 2.35rem;
   }
 
-  .emergency-badge {
-    @apply px-2 py-0.5 text-[9px];
+  .contact-fab-toggle {
+    height: 3.4rem;
+    width: 3.4rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact-fab-shell {
+    right: 1.45rem;
+    bottom: 10.5rem;
+    gap: 0.7rem;
   }
 
-  .emergency-status {
-    @apply text-[10px];
+  .contact-fab-panel {
+    min-width: 16.5rem;
+    padding: 0.95rem 1rem;
   }
 
-  .emergency-title {
-    @apply text-[0.98rem];
-  }
-
-  .emergency-number {
+  .contact-fab-toggle {
     display: none;
+  }
+
+  .contact-fab-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+    min-width: auto;
+    padding: 0.62rem 0.5rem;
+    border-radius: 9999px;
+    background: linear-gradient(180deg, rgba(132, 163, 197, 0.98), rgba(113, 145, 181, 0.98));
+  }
+
+  .contact-fab-panel:not(.contact-fab-panel-open) {
+    gap: 0.48rem;
+  }
+
+  .contact-fab-panel:not(.contact-fab-panel-open) .contact-fab-link {
+    justify-content: center;
+  }
+
+  .contact-fab-panel:not(.contact-fab-panel-open) .contact-fab-link-icon {
+    height: 2.35rem;
+    width: 2.35rem;
+  }
+
+  .contact-fab-panel:not(.contact-fab-panel-open) .contact-fab-link span:last-child {
+    display: none;
+  }
+
+  .contact-fab-panel.contact-fab-panel-open {
+    border-radius: 1.35rem;
+    padding: 1rem;
+    min-width: 16.5rem;
+    transform: translateX(0);
   }
 }

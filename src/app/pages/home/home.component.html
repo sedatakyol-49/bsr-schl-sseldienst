@@ -122,16 +122,30 @@
       <h2 class="section-title mt-5">Häufige Fragen direkt beantwortet.</h2>
     </div>
 
-    <div class="faq-list">
-      <article *ngFor="let faq of faqItems" class="faq-item">
-        <button type="button" class="faq-trigger" (click)="toggleFaq(faq)" [attr.aria-expanded]="faq.isExpanded">
-          <span>{{ faq.question }}</span>
-          <i class="fas fa-chevron-down" [class.rotate-180]="faq.isExpanded"></i>
+    <div class="home-faq-list">
+      <article *ngFor="let faq of faqItems; let i = index" class="home-faq-card">
+        <button type="button" class="home-faq-trigger" (click)="toggleFaq(faq)" [attr.aria-expanded]="faq.isExpanded" [attr.aria-controls]="'home-faq-answer-' + i" [attr.id]="'home-faq-question-' + i">
+          <div class="home-faq-icon" aria-hidden="true">
+            <i class="fas" [class]="faq.icon"></i>
+          </div>
+          <div class="home-faq-copy">
+            <h3>{{ faq.question }}</h3>
+            <div *ngIf="faq.isExpanded" class="home-faq-answer" [attr.id]="'home-faq-answer-' + i" role="region" [attr.aria-labelledby]="'home-faq-question-' + i">
+              <p>{{ faq.answer }}</p>
+            </div>
+          </div>
+          <i class="fas fa-chevron-down home-faq-chevron" [class.rotate-180]="faq.isExpanded"></i>
         </button>
-        <div *ngIf="faq.isExpanded" class="faq-answer">
-          <p>{{ faq.answer }}</p>
-        </div>
       </article>
+    </div>
+
+    <div class="home-faq-cta">
+      <h3>Noch Fragen?</h3>
+      <p>Rufen Sie uns an oder nutzen Sie das Kontaktformular. Wir helfen schnell weiter.</p>
+      <div class="home-faq-cta-actions">
+        <a href="tel:+491777679185" class="btn bg-white text-primary-900 hover:bg-primary-50">01777 679185</a>
+        <a routerLink="/kontakt" class="btn border border-white/15 bg-white/10 text-white hover:bg-white/15">Kontakt aufnehmen</a>
+      </div>
     </div>
   </div>
 </section>

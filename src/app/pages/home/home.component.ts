@@ -22,6 +22,7 @@ interface PricingItem {
 interface FaqItem {
   question: string;
   answer: string;
+  icon: string;
   isExpanded: boolean;
 }
 
@@ -43,8 +44,8 @@ export class HomeComponent implements OnInit {
   ];
 
   protected readonly introParagraphs = [
-    'Willkommen bei BSR Schlüsseldienst, Ihrem zertifizierten Partner für Schlüssel- und Sicherheitstechnik. Wir gewährleisten professionelle Betreuung in Freiburg und Südbaden – diskret, effizient und nach höchsten Standards.',
-    'Bei BSR Schlüsseldienst erhalten Sie zuverlässige Hilfe rund um Schlüssel, Schlösser und Sicherheit – schnell, fachgerecht und zu fairen Preisen. Ob Notfall, Reparatur oder Beratung: Wir sind Ihr Ansprechpartner in Freiburg und der gesamten Region Südbaden.'
+    'Willkommen bei BSR Schlüsseldienst, Ihrem zertifizierten Partner für Schlüssel- und Sicherheitstechnik. Wir gewährleisten professionelle Betreuung in Freiburg und Südbaden - diskret, effizient und nach höchsten Standards.',
+    'Bei BSR Schlüsseldienst erhalten Sie zuverlässige Hilfe rund um Schlüssel, Schlösser und Sicherheit - schnell, fachgerecht und zu fairen Preisen. Ob Notfall, Reparatur oder Beratung: Wir sind Ihr Ansprechpartner in Freiburg und der gesamten Region Südbaden.'
   ];
 
   protected readonly serviceCards: ServiceCard[] = [
@@ -111,21 +112,25 @@ export class HomeComponent implements OnInit {
     {
       question: 'Wie schnell ist BSR Schlüsseldienst im Raum Freiburg vor Ort?',
       answer: 'Je nach Standort und Verkehrslage helfen wir in Freiburg und Südbaden schnell und regional koordiniert weiter.',
+      icon: 'fa-clock',
       isExpanded: true
     },
     {
       question: 'Welche Leistungen bieten Sie an?',
       answer: 'Zu unseren Kernleistungen zählen Türöffnungen, Schlosswechsel, Zylinderwechsel, Briefkastenservice und Hilfe rund um Sicherheitstechnik.',
+      icon: 'fa-toolbox',
       isExpanded: false
     },
     {
       question: 'Wie erfahre ich den Preis?',
       answer: 'Vor dem Einsatz erhalten Sie eine klare telefonische Ersteinschätzung. Zusätzlicher Aufwand wird nicht versteckt, sondern nachvollziehbar erklärt.',
+      icon: 'fa-euro-sign',
       isExpanded: false
     },
     {
       question: 'Wie erreiche ich Sie am schnellsten?',
-      answer: 'Direkt telefonisch unter 01777 679185 oder per E-Mail an Info@bsr-schluesseldienst.de.',
+      answer: 'Direkt telefonisch unter 01777 679185 oder per E-Mail an info@bsr-schluesseldienst.de.',
+      icon: 'fa-phone',
       isExpanded: false
     }
   ];

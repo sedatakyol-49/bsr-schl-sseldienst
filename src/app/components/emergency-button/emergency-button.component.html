@@ -1,19 +1,45 @@
-﻿<div class="fixed bottom-3 left-1/2 z-50 w-[calc(100%-1.5rem)] max-w-[20rem] -translate-x-1/2 md:bottom-5 md:left-auto md:right-5 md:w-auto md:max-w-none md:translate-x-0">
-  <a href="tel:+491777679185" class="emergency-button" aria-label="BSR Notdienst jetzt anrufen: 01777 679185">
-    <span class="emergency-icon-wrap" aria-hidden="true">
-      <span class="emergency-icon-ping"></span>
-      <span class="emergency-icon">
-        <i class="fas fa-phone-alt" aria-hidden="true"></i>
+<div
+  class="contact-fab-shell"
+  (mouseenter)="openPanel()"
+  (mouseleave)="closePanel()"
+>
+  <div class="contact-fab-panel" [class.contact-fab-panel-open]="panelOpen">
+    <a routerLink="/kontakt" class="contact-fab-link" (click)="closePanel()">
+      <span class="contact-fab-link-icon" aria-hidden="true">
+        <i class="fas fa-comment-dots"></i>
       </span>
-    </span>
+      <span>Kontaktformular</span>
+    </a>
 
-    <span class="emergency-copy">
-      <span class="emergency-topline">
-        <span class="emergency-badge">24/7</span>
-        <span class="emergency-status">Direkt erreichbar</span>
+    <a href="tel:+491777679185" class="contact-fab-link" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">
+      <span class="contact-fab-link-icon" aria-hidden="true">
+        <i class="fas fa-phone"></i>
       </span>
-      <span class="emergency-title">01777 679185</span>
-      <span class="emergency-number">Jetzt direkt anrufen</span>
-    </span>
-  </a>
+      <span>01777 679185</span>
+    </a>
+
+    <a href="mailto:info@bsr-schluesseldienst.de" class="contact-fab-link" aria-label="E-Mail an BSR Schlüsseldienst senden">
+      <span class="contact-fab-link-icon" aria-hidden="true">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <span>info&#64;bsr-schluesseldienst.de</span>
+    </a>
+
+    <a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="contact-fab-link" aria-label="WhatsApp-Chat mit BSR Schlüsseldienst öffnen">
+      <span class="contact-fab-link-icon" aria-hidden="true">
+        <i class="fab fa-whatsapp"></i>
+      </span>
+      <span>WhatsApp Chat</span>
+    </a>
+  </div>
+
+  <button
+    type="button"
+    class="contact-fab-toggle"
+    (click)="togglePanel()"
+    [attr.aria-expanded]="panelOpen"
+    aria-label="Kontaktoptionen öffnen"
+  >
+    <i class="fas fa-comments" aria-hidden="true"></i>
+  </button>
 </div>

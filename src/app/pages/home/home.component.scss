@@ -230,7 +230,8 @@
 
 .services-grid,
 .pricing-list,
-.faq-list {
+.faq-list,
+.home-faq-list {
   display: grid;
   gap: 1.25rem;
   margin-top: 2rem;
@@ -445,6 +446,91 @@
   padding-top: 0.8rem;
 }
 
+.home-faq-card {
+  overflow: hidden;
+  border: 1px solid var(--home-border);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  box-shadow: var(--home-shadow-soft);
+}
+
+.home-faq-trigger {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.home-faq-icon {
+  display: inline-flex;
+  height: 2.75rem;
+  width: 2.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.6rem;
+  background: #eef4ff;
+  color: #143f9c;
+}
+
+.home-faq-copy {
+  flex: 1;
+}
+
+.home-faq-copy h3 {
+  margin: 0;
+  color: var(--home-ink);
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.home-faq-answer {
+  margin-top: 0.7rem;
+}
+
+.home-faq-answer p {
+  margin: 0;
+}
+
+.home-faq-chevron {
+  margin-top: 0.15rem;
+  color: #143f9c;
+  transition: transform 0.25s ease;
+}
+
+.home-faq-cta {
+  margin-top: 2rem;
+  padding: 2.2rem 1.5rem;
+  border-radius: 0.8rem;
+  background: #143f9c;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: var(--home-shadow);
+}
+
+.home-faq-cta h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 800;
+}
+
+.home-faq-cta p {
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.home-faq-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.75rem;
+}
+
 .region-pill {
   display: inline-flex;
   align-items: center;
@@ -458,37 +544,37 @@
 }
 
 .hero-shell .btn-primary {
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  background: rgba(255, 255, 255, 0.14);
-  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.98);
+  color: #203252;
   backdrop-filter: blur(8px);
-  box-shadow: none;
+  box-shadow: 0 10px 24px rgba(17, 43, 95, 0.18);
 }
 
 .hero-shell .btn-primary:hover {
-  border-color: rgba(255, 255, 255, 0.44);
-  background: rgba(255, 255, 255, 0.2);
-  color: #ffffff;
+  border-color: #ffffff;
+  background: #ffffff;
+  color: #17233a;
 }
 
 .hero-shell .hero-whatsapp-btn {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  border: 1px solid #25d366 !important;
-  background: #25d366 !important;
-  color: #ffffff !important;
-  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.94) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  color: #203252 !important;
+  box-shadow: 0 10px 24px rgba(17, 43, 95, 0.16);
 }
 
 .hero-shell .hero-whatsapp-btn:hover {
-  border-color: #1fba57 !important;
-  background: #1fba57 !important;
-  color: #ffffff !important;
+  border-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #17233a !important;
 }
 
 .hero-shell .hero-whatsapp-btn i {
-  color: #ffffff !important;
+  color: #203252 !important;
 }
 
 @keyframes reviews-scroll {
