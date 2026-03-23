@@ -96,6 +96,13 @@ try {
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     }
 
+    if (!empty($config['smtp_debug'])) {
+        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        $mail->Debugoutput = static function (string $message, int $level): void {
+            error_log(sprintf('[contact.php][SMTP][%d] %s', $level, $message));
+        };
+    }
+
     $mail->setFrom((string)$config['from_email'], (string)$config['from_name']);
     $mail->addAddress((string)$config['to_email'], (string)$config['to_name']);
     $mail->addReplyTo($email, $name);

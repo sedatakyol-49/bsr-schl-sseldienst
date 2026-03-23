@@ -14,16 +14,16 @@
 
       <div class="hero-actions">
         <a href="tel:+491777679185" class="btn btn-primary">01777 679185</a>
+        <a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="btn hero-whatsapp-btn" aria-label="WhatsApp-Chat mit BSR Schlüsseldienst öffnen">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          <span>WhatsApp</span>
+        </a>
         <a routerLink="/produkte" class="btn btn-secondary">Preise ansehen</a>
       </div>
 
       <div class="hero-highlights">
         <span *ngFor="let highlight of highlights" class="hero-highlight">{{ highlight }}</span>
       </div>
-    </div>
-
-    <div class="hero-media" aria-hidden="true">
-      <app-page-image src="assets/images/home-foto.jpeg" alt="BSR Schlüsseldienst im Einsatz"></app-page-image>
     </div>
   </div>
 </section>
@@ -49,25 +49,27 @@
         <p>Basierend auf {{ activeReviews.reviewCount }} Google Rezensionen für {{ activeReviews.businessName }}.</p>
       </div>
 
-      <div *ngIf="reviewsData?.reviews?.length" class="reviews-track">
-        <article *ngFor="let review of reviewsData?.reviews" class="review-card">
-          <div class="review-card-head">
-            <div>
-              <strong>{{ review.authorName }}</strong>
+      <div *ngIf="reviewsData?.reviews?.length" class="reviews-marquee" (mouseenter)="pauseReviews()" (mouseleave)="resumeReviews()">
+        <div class="reviews-track" [style.animation-play-state]="reviewsPaused ? 'paused' : 'running'">
+          <article *ngFor="let review of scrollingReviews" class="review-card">
+            <div class="review-card-head">
+              <div>
+                <strong>{{ review.authorName }}</strong>
+              </div>
+              <div class="review-stars">
+                <i *ngFor="let star of stars" class="fas fa-star" [class.opacity-30]="star > review.rating"></i>
+              </div>
             </div>
-            <div class="review-stars">
-              <i *ngFor="let star of stars" class="fas fa-star" [class.opacity-30]="star > review.rating"></i>
+            <p class="review-copy">"{{ review.comment }}"</p>
+            <div *ngIf="review.ownerResponse" class="review-response">
+              <div class="review-response-head">
+                <strong>BSR Schlüsseldienst</strong>
+                <span>Inhaber</span>
+              </div>
+              <p>{{ review.ownerResponse }}</p>
             </div>
-          </div>
-          <p class="review-copy">"{{ review.comment }}"</p>
-          <div *ngIf="review.ownerResponse" class="review-response">
-            <div class="review-response-head">
-              <strong>BSR Schlüsseldienst</strong>
-              <span>Inhaber</span>
-            </div>
-            <p>{{ review.ownerResponse }}</p>
-          </div>
-        </article>
+          </article>
+        </div>
       </div>
     </div>
   </div>
@@ -109,27 +111,6 @@
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
       </article>
-    </div>
-
-    <div class="video-feature">
-      <div class="video-copy">
-        <span class="badge">Video</span>
-        <h3>Einblick in den Service von BSR Schlüsseldienst.</h3>
-        <p>Wie gewünscht liegt das Video aktuell direkt unter dem Leistungsbereich und ergänzt die Seite als zusätzlicher Vertrauenspunkt.</p>
-      </div>
-
-      <div class="video-frame">
-        <video
-          controls
-          muted
-          playsinline
-          preload="metadata"
-          poster="assets/images/home-foto.jpeg"
-          aria-label="Video von BSR Schlüsseldienst"
-        >
-          <source src="assets/videos/hero-background.mp4" type="video/mp4" />
-        </video>
-      </div>
     </div>
   </div>
 </section>

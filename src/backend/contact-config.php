@@ -4,11 +4,12 @@ $config = [
     'smtp_host' => 'smtp.ionos.de',
     'smtp_port' => 587,
     'smtp_secure' => 'tls',
-    'smtp_username' => 'Info@bsr-schluesseldienst.de',
+    'smtp_debug' => false,
+    'smtp_username' => 'info@bsr-schluesseldienst.de',
     'smtp_password' => '',
-    'from_email' => 'Info@bsr-schluesseldienst.de',
+    'from_email' => 'info@bsr-schluesseldienst.de',
     'from_name' => 'BSR Schluesseldienst Website',
-    'to_email' => 'Info@bsr-schluesseldienst.de',
+    'to_email' => 'info@bsr-schluesseldienst.de',
     'to_name' => 'BSR Schluesseldienst',
 ];
 

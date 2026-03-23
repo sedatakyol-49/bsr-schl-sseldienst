@@ -16,8 +16,7 @@
   margin-bottom: 0;
   background:
     linear-gradient(90deg, rgba(32, 55, 87, 0.88), rgba(32, 55, 87, 0.5)),
-    linear-gradient(0deg, rgba(15, 24, 38, 0.16), rgba(15, 24, 38, 0.16)),
-    url('/assets/images/home-foto.jpeg') center/cover no-repeat;
+    linear-gradient(0deg, rgba(15, 24, 38, 0.16), rgba(15, 24, 38, 0.16));
   min-height: clamp(30rem, 60vh, 38rem);
 }
 
@@ -42,8 +41,7 @@
 }
 
 .hero-grid,
-.intro-grid,
-.video-feature {
+.intro-grid {
   display: grid;
   gap: 2rem;
   align-items: center;
@@ -112,7 +110,6 @@
 .hero-highlight {
   display: inline-flex;
   align-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 9999px;
   padding: 0.68rem 0.95rem 0.68rem 0.8rem;
   background: rgba(255, 255, 255, 0.1);
@@ -170,7 +167,6 @@
 .section-head .badge,
 .pricing-card .badge,
 .reviews-header .badge,
-.video-copy .badge,
 .regions-card .badge {
   background: transparent;
   border-color: rgba(20, 63, 156, 0.14);
@@ -286,47 +282,6 @@
   border-top: 5px solid #fb7b57;
 }
 
-.video-feature {
-  margin-top: 2.4rem;
-  padding: clamp(1.35rem, 2vw, 1.75rem);
-  border: 1px solid var(--home-border);
-  border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: var(--home-shadow);
-}
-
-.video-copy h3 {
-  margin: 1rem 0 0;
-  color: var(--home-ink);
-  font-size: 1.7rem;
-  font-weight: 800;
-}
-
-.video-copy p {
-  margin-top: 1rem;
-  color: var(--home-muted);
-  line-height: 1.8;
-}
-
-.video-frame {
-  overflow: hidden;
-  border-radius: 0.35rem;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  background: #edf1f6;
-}
-
-.video-frame video {
-  display: block;
-  width: min(100%, 22rem);
-  max-height: 28rem;
-  aspect-ratio: auto;
-  object-fit: contain;
-  border-radius: 0.2rem;
-  box-shadow: var(--home-shadow-soft);
-}
-
 .reviews-shell {
   padding: 0;
   border: 0;
@@ -374,15 +329,17 @@
   color: #f6b423;
 }
 
-.reviews-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(18rem, 22rem);
-  gap: 1.1rem;
+.reviews-marquee {
   margin-top: 1.75rem;
-  overflow-x: auto;
+  overflow: hidden;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 1.1rem;
   padding-bottom: 0.5rem;
-  scroll-snap-type: x proximity;
+  width: max-content;
+  animation: reviews-scroll 34s linear infinite;
 }
 
 .review-card,
@@ -395,6 +352,8 @@
 }
 
 .review-card {
+  width: min(22rem, calc(100vw - 3rem));
+  flex: 0 0 min(22rem, calc(100vw - 3rem));
   box-shadow: var(--home-shadow-soft);
   scroll-snap-align: start;
 }
@@ -499,18 +458,52 @@
 }
 
 .hero-shell .btn-primary {
-  background: #ff8158;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  backdrop-filter: blur(8px);
   box-shadow: none;
 }
 
 .hero-shell .btn-primary:hover {
-  background: #f26f45;
+  border-color: rgba(255, 255, 255, 0.44);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.hero-shell .hero-whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid #25d366 !important;
+  background: #25d366 !important;
+  color: #ffffff !important;
+  box-shadow: none;
+}
+
+.hero-shell .hero-whatsapp-btn:hover {
+  border-color: #1fba57 !important;
+  background: #1fba57 !important;
+  color: #ffffff !important;
+}
+
+.hero-shell .hero-whatsapp-btn i {
+  color: #ffffff !important;
+}
+
+@keyframes reviews-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.55rem));
+  }
 }
 
 @media (max-width: 767px) {
   .hero-grid,
   .intro-grid,
-  .video-feature,
   .services-grid {
     grid-template-columns: 1fr;
   }
@@ -524,9 +517,7 @@
   }
 
   .reviews-track {
-    grid-auto-columns: 85%;
-    padding-bottom: 0.4rem;
-    scroll-snap-type: x mandatory;
+    animation-duration: 24s;
   }
 
   .price-item,
@@ -540,10 +531,6 @@
     font-size: 1.5rem;
   }
 
-  .video-frame video {
-    width: min(100%, 18rem);
-    max-height: 22rem;
-  }
 }
 
 @media (min-width: 768px) {
@@ -551,8 +538,7 @@
     grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.35fr);
   }
 
-  .intro-grid,
-  .video-feature {
+  .intro-grid {
     grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
   }
 

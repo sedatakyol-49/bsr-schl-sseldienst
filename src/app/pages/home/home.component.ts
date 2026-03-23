@@ -34,6 +34,7 @@ interface FaqItem {
 })
 export class HomeComponent implements OnInit {
   protected readonly stars = [1, 2, 3, 4, 5];
+  protected reviewsPaused = false;
 
   protected readonly highlights = [
     '24/7 erreichbar',
@@ -137,6 +138,20 @@ export class HomeComponent implements OnInit {
     this.reviewsService.getBusinessReviews().subscribe(data => {
       this.reviewsData = data;
     });
+  }
+
+  protected get scrollingReviews() {
+    return this.reviewsData?.reviews?.length
+      ? [...this.reviewsData.reviews, ...this.reviewsData.reviews]
+      : [];
+  }
+
+  protected pauseReviews(): void {
+    this.reviewsPaused = true;
+  }
+
+  protected resumeReviews(): void {
+    this.reviewsPaused = false;
   }
 
   protected toggleFaq(selectedFaq: FaqItem): void {
