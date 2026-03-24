@@ -1,7 +1,7 @@
 <div class="fixed inset-x-0 top-0 z-50 border-b border-slate-200/80 bg-white/95 backdrop-blur transition-all duration-300" [class]="scrolled || menuOpen ? 'shadow-sm py-2' : 'py-3'">
   <div class="container-custom">
     <nav class="relative flex items-center justify-between gap-4" aria-label="Hauptnavigation">
-      <a routerLink="/" class="flex items-center" aria-label="Zur Startseite von BSR SchlÃ¼sseldienst">
+      <a routerLink="/" class="flex items-center" aria-label="Zur Startseite von BSR Schlüsseldienst">
         <app-logo></app-logo>
       </a>
 
@@ -15,7 +15,7 @@
       </div>
 
       <div class="hidden md:flex items-center gap-3">
-        <a href="tel:+491777679185" class="btn btn-primary whitespace-nowrap !rounded-md !px-5 !py-2.5" aria-label="BSR SchlÃ¼sseldienst anrufen: 01777 679185">01777 679185</a>
+        <a href="tel:+491777679185" class="btn btn-primary header-call-btn whitespace-nowrap !rounded-md !px-5 !py-2.5" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a>
       </div>
 
       <div class="md:hidden">
@@ -25,7 +25,7 @@
           class="inline-flex h-11 w-11 items-center justify-center rounded-md border border-primary-100 bg-white text-primary-800 shadow-sm"
           [attr.aria-expanded]="menuOpen"
           aria-controls="mobile-navigation"
-          [attr.aria-label]="menuOpen ? 'MenÃ¼ schlieÃŸen' : 'MenÃ¼ Ã¶ffnen'"
+          [attr.aria-label]="menuOpen ? 'Menü schließen' : 'Menü öffnen'"
         >
           <svg *ngIf="!menuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -45,7 +45,7 @@
         <a routerLink="/produkte" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Preisliste</a>
         <a routerLink="/faq" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">FAQ</a>
         <a routerLink="/kontakt" routerLinkActive="nav-pill-active" class="nav-pill" (click)="closeMenu()">Kontakt</a>
-        <a href="tel:+491777679185" class="btn btn-primary mt-2" aria-label="BSR SchlÃ¼sseldienst anrufen: 01777 679185">01777 679185</a>
+        <a href="tel:+491777679185" class="btn btn-primary header-call-btn mt-2" aria-label="BSR Schlüsseldienst anrufen: 01777 679185">01777 679185</a>
       </div>
     </div>
   </div>

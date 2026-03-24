@@ -241,8 +241,11 @@
   padding: 1.1rem 1.1rem 1.35rem;
   border: 1px solid rgba(17, 43, 95, 0.08);
   border-radius: 0;
-  background: var(--home-surface);
+  background:
+    linear-gradient(180deg, rgba(94, 111, 151, 0.12), rgba(94, 111, 151, 0.12)),
+    #ffffff;
   box-shadow: var(--home-shadow);
+  border-top: 5px solid #5e6f97;
 }
 
 .service-card h3,
@@ -260,27 +263,6 @@
   margin: 0.8rem 0 0;
   color: var(--home-muted);
   line-height: 1.75;
-}
-
-.services-grid .service-card:nth-child(1) {
-  background:
-    linear-gradient(180deg, rgba(94, 111, 151, 0.12), rgba(94, 111, 151, 0.12)),
-    #ffffff;
-  border-top: 5px solid #5e6f97;
-}
-
-.services-grid .service-card:nth-child(2) {
-  background:
-    linear-gradient(180deg, rgba(199, 184, 164, 0.15), rgba(199, 184, 164, 0.15)),
-    #ffffff;
-  border-top: 5px solid #c7b8a4;
-}
-
-.services-grid .service-card:nth-child(3) {
-  background:
-    linear-gradient(180deg, rgba(251, 123, 87, 0.12), rgba(251, 123, 87, 0.12)),
-    #ffffff;
-  border-top: 5px solid #fb7b57;
 }
 
 .reviews-shell {
@@ -341,6 +323,15 @@
   padding-bottom: 0.5rem;
   width: max-content;
   animation: reviews-scroll 34s linear infinite;
+  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .reviews-marquee:hover .reviews-track {
+    animation-play-state: paused;
+  }
 }
 
 .review-card,
@@ -504,7 +495,9 @@
   margin-top: 2rem;
   padding: 2.2rem 1.5rem;
   border-radius: 0.8rem;
-  background: #143f9c;
+  background:
+    linear-gradient(90deg, rgba(32, 55, 87, 0.92), rgba(32, 55, 87, 0.74)),
+    linear-gradient(0deg, rgba(15, 24, 38, 0.2), rgba(15, 24, 38, 0.2));
   text-align: center;
   color: #ffffff;
   box-shadow: var(--home-shadow);

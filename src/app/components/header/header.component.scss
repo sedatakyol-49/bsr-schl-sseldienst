@@ -1,3 +1,20 @@
-﻿:host {
+:host {
   display: block;
+}
+
+.header-call-btn {
+  border: 1px solid rgba(32, 55, 87, 0.94);
+  background:
+    linear-gradient(90deg, rgba(32, 55, 87, 0.88), rgba(32, 55, 87, 0.72)),
+    linear-gradient(0deg, rgba(15, 24, 38, 0.16), rgba(15, 24, 38, 0.16));
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgba(17, 43, 95, 0.16);
+}
+
+.header-call-btn:hover {
+  border-color: rgba(32, 55, 87, 0.98);
+  background:
+    linear-gradient(90deg, rgba(32, 55, 87, 0.94), rgba(32, 55, 87, 0.8)),
+    linear-gradient(0deg, rgba(15, 24, 38, 0.18), rgba(15, 24, 38, 0.18));
+  color: #ffffff;
 }

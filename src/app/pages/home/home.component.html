@@ -49,8 +49,8 @@
         <p>Basierend auf {{ activeReviews.reviewCount }} Google Rezensionen für {{ activeReviews.businessName }}.</p>
       </div>
 
-      <div *ngIf="reviewsData?.reviews?.length" class="reviews-marquee" (mouseenter)="pauseReviews()" (mouseleave)="resumeReviews()">
-        <div class="reviews-track" [style.animation-play-state]="reviewsPaused ? 'paused' : 'running'">
+      <div *ngIf="reviewsData?.reviews?.length" class="reviews-marquee">
+        <div class="reviews-track">
           <article *ngFor="let review of scrollingReviews" class="review-card">
             <div class="review-card-head">
               <div>
