@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-import { PageImageComponent } from '../../components/page-image/page-image.component';
-
 interface PriceRow {
   service: string;
   timing: string;
@@ -19,7 +17,7 @@ interface PriceGroup {
 @Component({
   selector: 'app-products',
   standalone: true,
-  imports: [CommonModule, RouterLink, PageImageComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.scss']
 })

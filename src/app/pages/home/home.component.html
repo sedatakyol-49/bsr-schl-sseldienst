@@ -2,19 +2,19 @@
   <div class="container-custom hero-grid">
     <div class="hero-copy">
       <div class="hero-kicker-wrap">
-        <h1 class="hero-brand">BSR Schlüsseldienst</h1>
+        <h1 class="hero-brand">BSR Schluesseldienst</h1>
         <p class="hero-subtitle">Ihr Partner in Freiburg &amp; Umgebung</p>
       </div>
 
       <h2 class="hero-heading">Wir helfen zu jeder Zeit !</h2>
       <p class="hero-text">
-        Türöffnung, Schlosswechsel und schnelle Hilfe für Freiburg und Südbaden.
+        Tueroeffnung, Schlosswechsel, Schluesselkopien und schnelle Hilfe fuer Freiburg und Suedbaden.
         Direkt erreichbar, transparent im Ablauf und fachgerecht vor Ort.
       </p>
 
       <div class="hero-actions">
         <a href="tel:+491777679185" class="btn btn-primary">01777 679185</a>
-        <a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="btn hero-whatsapp-btn" aria-label="WhatsApp-Chat mit BSR Schlüsseldienst öffnen">
+        <a href="https://wa.me/491777679185" target="_blank" rel="noopener noreferrer" class="btn hero-whatsapp-btn" aria-label="WhatsApp-Chat mit BSR Schluesseldienst oeffnen">
           <i class="fab fa-whatsapp" aria-hidden="true"></i>
           <span>WhatsApp</span>
         </a>
@@ -46,7 +46,7 @@
         <div class="reviews-stars">
           <i *ngFor="let star of stars" class="fas fa-star"></i>
         </div>
-        <p>Basierend auf {{ activeReviews.reviewCount }} Google Rezensionen für {{ activeReviews.businessName }}.</p>
+        <p>Basierend auf {{ activeReviews.reviewCount }} Google Rezensionen fuer {{ activeReviews.businessName }}.</p>
       </div>
 
       <div *ngIf="reviewsData?.reviews?.length" class="reviews-marquee">
@@ -63,7 +63,7 @@
             <p class="review-copy">"{{ review.comment }}"</p>
             <div *ngIf="review.ownerResponse" class="review-response">
               <div class="review-response-head">
-                <strong>BSR Schlüsseldienst</strong>
+                <strong>BSR Schluesseldienst</strong>
                 <span>Inhaber</span>
               </div>
               <p>{{ review.ownerResponse }}</p>
@@ -79,7 +79,7 @@
   <div class="container-custom">
     <div class="section-head">
       <span class="badge">Willkommen</span>
-      <h2 class="section-title mt-5">Professionelle Betreuung für Schlüssel, Schloss und Sicherheit.</h2>
+      <h2 class="section-title mt-5">Professionelle Betreuung fuer Schluessel, Schloss und Sicherheit.</h2>
     </div>
 
     <div class="intro-grid">
@@ -91,7 +91,7 @@
         <p class="intro-contact-label">Direkter Kontakt</p>
         <a href="tel:+491777679185" class="intro-contact-phone">01777 679185</a>
         <a href="mailto:Info@bsr-schluesseldienst.de" class="intro-contact-mail">Info&#64;bsr-schluesseldienst.de</a>
-        <p class="intro-contact-note">Telefonisch, per WhatsApp oder über das Kontaktformular erreichbar.</p>
+        <p class="intro-contact-note">Telefonisch, per WhatsApp oder ueber das Kontaktformular erreichbar.</p>
       </div>
     </div>
   </div>
@@ -101,15 +101,18 @@
   <div class="container-custom">
     <div class="section-head">
       <span class="badge">Leistungen</span>
-      <h2 class="section-title mt-5">Unsere Leistungen werden weiter ausgebaut.</h2>
-      <p class="section-copy mt-4">Die wichtigsten Leistungen sind bereits sichtbar. Weitere Bereiche ergänzen wir in den nächsten Schritten.</p>
+      <h2 class="section-title mt-5">Mehr als Notoeffnungen: unser kompletter Schluessel- und Sicherheitsservice.</h2>
+      <p class="section-copy mt-4">Die Startseite zeigt jetzt die wichtigsten Leistungsfelder fuer Privatkunden, Gewerbe, Hausverwaltungen und Fahrzeugbesitzer auf einen Blick.</p>
     </div>
 
     <div class="services-grid">
       <article *ngFor="let service of serviceCards" class="service-card">
-        <app-service-media [src]="service.image" [iconClass]="service.icon" [alt]="service.title + ' von BSR Schlüsseldienst'"></app-service-media>
+        <app-service-media [iconClass]="service.icon" [compact]="true"></app-service-media>
         <h3>{{ service.title }}</h3>
         <p>{{ service.description }}</p>
+        <ul *ngIf="service.highlights?.length" class="service-highlights">
+          <li *ngFor="let highlight of service.highlights">{{ highlight }}</li>
+        </ul>
       </article>
     </div>
   </div>
@@ -119,7 +122,7 @@
   <div class="container-custom">
     <div class="section-head">
       <span class="badge">FAQ</span>
-      <h2 class="section-title mt-5">Häufige Fragen direkt beantwortet.</h2>
+      <h2 class="section-title mt-5">Haeufige Fragen direkt beantwortet.</h2>
     </div>
 
     <div class="home-faq-list">
@@ -155,7 +158,7 @@
     <div class="surface-card pricing-card">
       <span class="badge">Faire Preise</span>
       <h2 class="section-title mt-5">Wichtige Preisbeispiele klar eingeordnet.</h2>
-      <p class="section-copy mt-4">Transparenz ist ein fester Teil unseres Auftritts. Typische Leistungen sind vorab sichtbar und werden sauber erklärt.</p>
+      <p class="section-copy mt-4">Transparenz ist ein fester Teil unseres Auftritts. Typische Leistungen sind vorab sichtbar und werden sauber erklaert.</p>
 
       <div class="pricing-list">
         <article *ngFor="let item of fairPricing" class="price-item">
@@ -172,9 +175,6 @@
         <a routerLink="/kontakt" class="btn btn-primary">Kontakt aufnehmen</a>
       </div>
 
-      <div class="pricing-image-wrap">
-        <app-page-image src="assets/images/price-list.jpeg" alt="Preisübersicht von BSR Schlüsseldienst"></app-page-image>
-      </div>
     </div>
   </div>
 </section>
@@ -183,8 +183,8 @@
   <div class="container-custom">
     <div class="regions-card">
       <span class="badge">Einsatzgebiete</span>
-      <h2 class="section-title mt-5">Wir arbeiten in Freiburg und in weiten Teilen Südbadens.</h2>
-      <p class="section-copy mt-4">Kurze Wege, direkte Kommunikation und regionale Einsätze ohne unnötige Umwege.</p>
+      <h2 class="section-title mt-5">Wir arbeiten in Freiburg und in weiten Teilen Suedbadens.</h2>
+      <p class="section-copy mt-4">Kurze Wege, direkte Kommunikation und regionale Einsaetze ohne unnoetige Umwege.</p>
 
       <div class="regions-list">
         <span *ngFor="let region of regions" class="region-pill">{{ region }}</span>

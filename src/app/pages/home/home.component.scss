@@ -265,6 +265,33 @@
   line-height: 1.75;
 }
 
+.service-highlights {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-highlights li {
+  position: relative;
+  padding-left: 1rem;
+  color: var(--home-ink);
+  font-size: 0.94rem;
+  font-weight: 600;
+}
+
+.service-highlights li::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  left: 0;
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 9999px;
+  background: #ff8158;
+}
+
 .reviews-shell {
   padding: 0;
   border: 0;
@@ -392,12 +419,6 @@
   margin: 0.6rem 0 0;
   color: var(--home-muted);
   line-height: 1.65;
-}
-
-.pricing-image-wrap {
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem;
 }
 
 .price-item {
@@ -614,7 +635,7 @@
 
 @media (min-width: 768px) {
   .hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.35fr);
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .intro-grid {

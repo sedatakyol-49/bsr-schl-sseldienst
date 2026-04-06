@@ -157,7 +157,7 @@
   }
 
   .page-hero-grid {
-    @apply grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center;
+    @apply grid gap-10 lg:grid-cols-1 lg:items-center;
   }
 
   .page-band {
