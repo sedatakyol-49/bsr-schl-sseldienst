@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
@@ -22,6 +22,9 @@ export class ContactComponent {
   submitting = false;
   submitSuccess = false;
   submitError = false;
+  submitErrorMessage = 'Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.';
+
+  private readonly contactEndpoint = '/contact.php';
 
   constructor(
     private readonly fb: FormBuilder,
@@ -49,6 +52,7 @@ export class ContactComponent {
     this.submitting = true;
     this.submitSuccess = false;
     this.submitError = false;
+    this.submitErrorMessage = 'Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.';
 
     try {
       const payload = {
@@ -61,7 +65,7 @@ export class ContactComponent {
       };
 
       await firstValueFrom(
-        this.http.post<ContactResponse>('contact.php', payload, {
+        this.http.post<ContactResponse>(this.contactEndpoint, payload, {
           headers: {
             'Content-Type': 'application/json'
           }
@@ -82,8 +86,25 @@ export class ContactComponent {
     } catch (error) {
       console.error('Error sending contact form:', error);
       this.submitError = true;
+      this.submitErrorMessage = this.resolveErrorMessage(error);
     } finally {
       this.submitting = false;
     }
+  }
+
+  private resolveErrorMessage(error: unknown): string {
+    if (error instanceof HttpErrorResponse) {
+      const backendMessage = typeof error.error?.message === 'string' ? error.error.message.trim() : '';
+
+      if (backendMessage) {
+        return backendMessage;
+      }
+
+      if (error.status === 0) {
+        return 'Der Server ist derzeit nicht erreichbar. Bitte prüfen Sie die API-Konfiguration oder rufen Sie uns direkt an.';
+      }
+    }
+
+    return 'Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.';
   }
 }

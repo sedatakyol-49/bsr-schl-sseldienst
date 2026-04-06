@@ -20,83 +20,83 @@ interface ServiceDetail {
 export class ServicesComponent {
   protected readonly serviceDetails: ServiceDetail[] = [
     {
-      title: 'Tueroeffnungen',
-      description: 'Schonende Oeffnungen fuer Wohnungen, Haeuser, Bueroeinheiten, Keller, Garagen und Nebeneingaenge - transparent abgestimmt und fachgerecht ausgefuehrt.',
+      title: 'Türöffnungen',
+      description: 'Schonende Öffnungen für Wohnungen, Häuser, Büroeinheiten, Keller, Garagen und Nebeneingänge - transparent abgestimmt und fachgerecht ausgeführt.',
       icon: 'fa-door-open',
       items: [
-        'Hilfe bei zugefallenen und abgeschlossenen Tueren',
-        'Oeffnungen fuer Privatkunden, Gewerbe und Hausverwaltungen',
-        'Sorgfaeltige Arbeitsweise mit Blick auf Beschlaege und Tuersituation'
+        'Hilfe bei zugefallenen und abgeschlossenen Türen',
+        'Öffnungen für Privatkunden, Gewerbe und Hausverwaltungen',
+        'Sorgfältige Arbeitsweise mit Blick auf Beschläge und Türsituation'
       ]
     },
     {
       title: 'Schloss- und Zylinderwechsel',
-      description: 'Wenn Schluessel verloren gehen, Zylinder verschleissen oder nach einem Mieterwechsel schnell gehandelt werden muss, sorgen wir fuer passende Austauschloesungen.',
+      description: 'Wenn Schlüssel verloren gehen, Zylinder verschleißen oder nach einem Mieterwechsel schnell gehandelt werden muss, sorgen wir für passende Austauschlösungen.',
       icon: 'fa-key',
       items: [
         'Austausch defekter oder unsicherer Profilzylinder',
-        'Wechsel von Schloss, Beschlag und Schliesskomponenten',
+        'Wechsel von Schloss, Beschlag und Schließkomponenten',
         'Sinnvoll nach Einbruch, Defekt, Verlust oder Nutzerwechsel'
       ]
     },
     {
-      title: 'Ersatzschluessel und Schluesselkopien',
-      description: 'Wir erweitern den klassischen Notdienst um praezise Schluesselkopien und Ersatzschluessel fuer viele gaengige Schluesseltypen und Schliessanlagen.',
+      title: 'Ersatzschlüssel und Schlüsselkopien',
+      description: 'Wir erweitern den klassischen Notdienst um präzise Schlüsselkopien und Ersatzschlüssel für viele gängige Schlüsseltypen und Schließanlagen.',
       icon: 'fa-copy',
       items: [
-        'Haus-, Wohnungs- und Nebenschluessel als Zweit- oder Ersatzschluessel',
-        'Schluesselkopien fuer viele gaengige Schliessanlagen und Systemschluessel',
-        'Praktisch fuer Familien, Hausverwaltungen, Buero und Vermietung'
+        'Haus-, Wohnungs- und Nebenschlüssel als Zweit- oder Ersatzschlüssel',
+        'Schlüsselkopien für viele gängige Schließanlagen und Systemschlüssel',
+        'Praktisch für Familien, Hausverwaltungen, Büro und Vermietung'
       ]
     },
     {
       title: 'Mehrfachverriegelung',
-      description: 'Mehrfachverriegelungen bieten an mehreren Punkten Halt und Sicherheit. Wir uebernehmen Einbau, Austausch und Instandsetzung fuer Haus- und Sicherheitstueren.',
+      description: 'Mehrfachverriegelungen bieten an mehreren Punkten Halt und Sicherheit. Wir übernehmen Einbau, Austausch und Instandsetzung für Haus- und Sicherheitstüren.',
       icon: 'fa-lock',
       items: [
         'Einbau neuer Mehrfachverriegelungen in Neu- und Bestandsobjekten',
         'Austausch verschlissener Bauteile und defekter Verriegelungsleisten',
-        'Reparaturen bei schwergangigen oder klemmenden Schliessmechanismen'
+        'Reparaturen bei schwergängigen oder klemmenden Schließmechanismen'
       ]
     },
     {
       title: 'Rund ums Auto',
-      description: 'Neben der Fahrzeugoeffnung unterstuetzen wir auch bei typischen Problemen am Autoschluessel - schnell, praxisnah und fuer viele gaengige Modelle.',
+      description: 'Neben der Fahrzeugöffnung unterstützen wir auch bei typischen Problemen am Autoschlüssel - schnell, praxisnah und für viele gängige Modelle.',
       icon: 'fa-car-side',
       items: [
-        'Kfz-Tueroeffnungen mit moeglichst schonender Vorgehensweise',
-        'Batteriewechsel bei Funk- und Klappschluesseln',
-        'Autoschluesselkopien und Ersatzschluessel fuer viele Fahrzeugtypen'
+        'Kfz-Türöffnungen mit möglichst schonender Vorgehensweise',
+        'Batteriewechsel bei Funk- und Klappschlüsseln',
+        'Autoschlüsselkopien und Ersatzschlüssel für viele Fahrzeugtypen'
       ]
     },
     {
       title: 'Tresorservice',
-      description: 'Tresore gehoeren fuer viele Kunden zur taeglichen Sicherheit. Wir helfen bei Oeffnung, Auswahl, Einbau und laufender Wartung.',
+      description: 'Tresore gehören für viele Kunden zur täglichen Sicherheit. Wir helfen bei Öffnung, Auswahl, Einbau und laufender Wartung.',
       icon: 'fa-toolbox',
       items: [
-        'Tresoroeffnungen bei Defekt, Schluesselverlust oder Bedienungsproblemen',
-        'Bestellung und Einbau passender Tresorloesungen fuer Privat und Gewerbe',
-        'Wartungen und Funktionspruefungen fuer langfristige Betriebssicherheit'
+        'Tresoröffnungen bei Defekt, Schlüsselverlust oder Bedienungsproblemen',
+        'Bestellung und Einbau passender Tresorlösungen für Privat und Gewerbe',
+        'Wartungen und Funktionsprüfungen für langfristige Betriebssicherheit'
       ]
     },
     {
       title: 'Sicherheitstechnik',
-      description: 'Wir beraten zu mechanischer Absicherung, passenden Schliesssystemen und alltagstauglichen Sicherheitsloesungen fuer Wohn- und Gewerbeobjekte.',
+      description: 'Wir beraten zu mechanischer Absicherung, passenden Schließsystemen und alltagstauglichen Sicherheitslösungen für Wohn- und Gewerbeobjekte.',
       icon: 'fa-shield-halved',
       items: [
-        'Beratung zu Schliesssystemen, Zusatzsicherungen und Beschlaegen',
-        'Loesungen fuer Wohnung, Einfamilienhaus, Mehrfamilienhaus und Gewerbe',
-        'Praktische Empfehlungen statt ueberladener Technikpakete'
+        'Beratung zu Schließsystemen, Zusatzsicherungen und Beschlägen',
+        'Lösungen für Wohnung, Einfamilienhaus, Mehrfamilienhaus und Gewerbe',
+        'Praktische Empfehlungen statt überladener Technikpakete'
       ]
     },
     {
       title: 'Briefkastenservice und Objektservice',
-      description: 'Auch Briefkaesten, Schliessfaecher und Objektanlagen gehoeren zum Alltag eines modernen Schluesseldienstes. Wir kuemmern uns um Oeffnung, Reparatur und Austausch.',
+      description: 'Auch Briefkästen, Schließfächer und Objektanlagen gehören zum Alltag eines modernen Schlüsseldienstes. Wir kümmern uns um Öffnung, Reparatur und Austausch.',
       icon: 'fa-envelope-open-text',
       items: [
-        'Oeffnung und Reparatur von Briefkaesten und Briefkastenanlagen',
-        'Unterstuetzung fuer Wohnobjekte, Hausverwaltungen und Gewerbe',
-        'Klare Ablaeufe bei Austausch, Nachruestung und Instandsetzung'
+        'Öffnung und Reparatur von Briefkästen und Briefkastenanlagen',
+        'Unterstützung für Wohnobjekte, Hausverwaltungen und Gewerbe',
+        'Klare Abläufe bei Austausch, Nachrüstung und Instandsetzung'
       ]
     }
   ];
@@ -108,11 +108,11 @@ export class ServicesComponent {
     'Lahr',
     'Offenburg',
     'Bad Krozingen',
-    'Muellheim',
+    'Müllheim',
     'Neuenburg',
     'Weil am Rhein',
-    'Loerrach',
+    'Lörrach',
     'Rheinfelden',
-    'weitere Orte in Suedbaden'
+    'weitere Orte in Südbaden'
   ];
 }

@@ -8,9 +8,9 @@ $config = [
     'smtp_username' => 'info@bsr-schluesseldienst.de',
     'smtp_password' => '',
     'from_email' => 'info@bsr-schluesseldienst.de',
-    'from_name' => 'BSR Schluesseldienst Website',
+    'from_name' => 'BSR Schlüsseldienst Website',
     'to_email' => 'info@bsr-schluesseldienst.de',
-    'to_name' => 'BSR Schluesseldienst',
+    'to_name' => 'BSR Schlüsseldienst',
 ];
 
 $secretsFile = __DIR__ . '/contact-secrets.php';

@@ -22,7 +22,7 @@
         <div class="rounded-md border border-primary-100 bg-primary-50 px-4 py-4"><label for="privacy" class="flex items-start gap-3 text-sm text-secondary-700"><input id="privacy" type="checkbox" formControlName="privacy" class="mt-1 h-4 w-4 rounded border-primary-200 text-primary-700 focus:ring-primary-500" [attr.aria-invalid]="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" aria-describedby="privacy-error"><span>Ich stimme der <a routerLink="/datenschutz" class="font-semibold text-primary-700 hover:text-primary-900">Datenschutzerklärung</a> zu.</span></label><div *ngIf="contactForm.get('privacy')?.touched && contactForm.get('privacy')?.invalid" id="privacy-error" class="form-error mt-2">Bitte stimmen Sie der Datenschutzerklärung zu.</div></div>
         <button type="submit" class="btn btn-primary w-full" [disabled]="submitting" [attr.aria-busy]="submitting"><span *ngIf="!submitting">Nachricht senden</span><span *ngIf="submitting">Wird gesendet...</span></button>
         <div *ngIf="submitSuccess" class="rounded-md border border-green-200 bg-green-50 px-4 py-3 text-sm text-green-800" role="status" aria-live="polite">Ihre Nachricht wurde gesendet. Wir melden uns schnellstmöglich zurück.</div>
-        <div *ngIf="submitError" class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.</div>
+        <div *ngIf="submitError" class="rounded-md border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">{{ submitErrorMessage }}</div>
       </form>
     </div>
 

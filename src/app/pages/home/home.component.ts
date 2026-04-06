@@ -42,64 +42,64 @@ export class HomeComponent implements OnInit {
   ];
 
   protected readonly introParagraphs = [
-    'Willkommen bei BSR Schluesseldienst, Ihrem zertifizierten Partner fuer Schluessel- und Sicherheitstechnik. Wir bieten professionelle Betreuung in Freiburg und Suedbaden - diskret, effizient und mit hohem Qualitaetsanspruch.',
-    'Neben schnellen Notoeffnungen umfasst unser Angebot auch Schluesselkopien, Mehrfachverriegelungen, Autoschluesselservice, Tresorservice und klassische Schliess- und Reparaturarbeiten fuer Privatkunden, Gewerbe und Hausverwaltungen.'
+    'Willkommen bei BSR Schlüsseldienst, Ihrem zertifizierten Partner für Schlüssel- und Sicherheitstechnik. Wir bieten professionelle Betreuung in Freiburg und Südbaden - diskret, effizient und mit hohem Qualitätsanspruch.',
+    'Neben schnellen Notöffnungen umfasst unser Angebot auch Schlüsselkopien, Mehrfachverriegelungen, Autoschlüsselservice, Tresorservice und klassische Schließ- und Reparaturarbeiten für Privatkunden, Gewerbe und Hausverwaltungen.'
   ];
 
   protected readonly serviceCards: ServiceCard[] = [
     {
-      title: 'Tueroeffnung',
-      description: 'Schonende Oeffnungen bei zugefallenen oder abgeschlossenen Tueren im privaten und gewerblichen Bereich.',
+      title: 'Türöffnung',
+      description: 'Schonende Öffnungen bei zugefallenen oder abgeschlossenen Türen im privaten und gewerblichen Bereich.',
       icon: 'fa-door-open',
-      highlights: ['Wohnung, Haus und Buero', 'Auch bei abgeschlossenen Tueren']
+      highlights: ['Wohnung, Haus und Büro', 'Auch bei abgeschlossenen Türen']
     },
     {
       title: 'Schlosswechsel',
       description: 'Zylinder- und Schlosswechsel nach Verlust, Defekt, Mieterwechsel oder akutem Sicherheitsbedarf.',
       icon: 'fa-key',
-      highlights: ['Zylinder, Beschlaege, Schloesser', 'Sauber montiert und erklaert']
+      highlights: ['Zylinder, Beschläge, Schlösser', 'Sauber montiert und erklärt']
     },
     {
-      title: 'Ersatzschluessel und Kopien',
-      description: 'Praezise Schluesselkopien und Ersatzschluessel fuer viele Haus-, Wohnungs- und gaengige Schliessanlagenschluessel.',
+      title: 'Ersatzschlüssel und Kopien',
+      description: 'Präzise Schlüsselkopien und Ersatzschlüssel für viele Haus-, Wohnungs- und gängige Schließanlagenschlüssel.',
       icon: 'fa-copy',
-      highlights: ['Zweit- und Ersatzschluessel', 'Auch fuer Schliessanlagen']
+      highlights: ['Zweit- und Ersatzschlüssel', 'Auch für Schließanlagen']
     },
     {
       title: 'Mehrfachverriegelung',
-      description: 'Einbau, Austausch und Reparatur moderner Mehrfachverriegelungen fuer Haus- und Sicherheitstueren.',
+      description: 'Einbau, Austausch und Reparatur moderner Mehrfachverriegelungen für Haus- und Sicherheitstüren.',
       icon: 'fa-lock',
-      highlights: ['Mehr Schutz an mehreren Punkten', 'Passend fuer Neu- und Bestandsobjekte']
+      highlights: ['Mehr Schutz an mehreren Punkten', 'Passend für Neu- und Bestandsobjekte']
     },
     {
       title: 'Rund ums Auto',
-      description: 'Kfz-Tueroeffnungen, Batteriewechsel am Autoschluessel sowie Ersatz- und Zweitschluessel fuer viele Fahrzeugtypen.',
+      description: 'Kfz-Türöffnungen, Batteriewechsel am Autoschlüssel sowie Ersatz- und Zweitschlüssel für viele Fahrzeugtypen.',
       icon: 'fa-car-side',
-      highlights: ['Beschaedigungsarme Fahrzeugoeffnung', 'Funk- und Transponderschluessel']
+      highlights: ['Beschädigungsarme Fahrzeugöffnung', 'Funk- und Transponderschlüssel']
     },
     {
       title: 'Tresorservice',
-      description: 'Tresoroeffnungen, Bestellung und Einbau sowie Wartung fuer Privatkunden, Kanzleien, Praxen und Gewerbe.',
+      description: 'Tresoröffnungen, Bestellung und Einbau sowie Wartung für Privatkunden, Kanzleien, Praxen und Gewerbe.',
       icon: 'fa-toolbox',
-      highlights: ['Oeffnung bei Defekt oder Verlust', 'Beratung zu passender Loesung']
+      highlights: ['Öffnung bei Defekt oder Verlust', 'Beratung zu passender Lösung']
     }
   ];
 
   protected readonly fairPricing: PricingItem[] = [
     {
-      title: 'Zugefallene Tuer',
+      title: 'Zugefallene Tür',
       price: 'ab 89 EUR',
-      description: 'Tagsueber mit transparenter Ersteinschaetzung vor Beginn.'
+      description: 'Tagsüber mit transparenter Ersteinschätzung vor Beginn.'
     },
     {
-      title: 'Abgeschlossene Tuer',
+      title: 'Abgeschlossene Tür',
       price: 'ab 119 EUR',
-      description: 'Je nach Aufwand, Uhrzeit und Tuersituation klar abgestimmt.'
+      description: 'Je nach Aufwand, Uhrzeit und Türsituation klar abgestimmt.'
     },
     {
       title: 'Schloss- oder Zylinderwechsel',
       price: 'ab 89 EUR',
-      description: 'Material und Ausfuehrung werden nachvollziehbar eingeordnet.'
+      description: 'Material und Ausführung werden nachvollziehbar eingeordnet.'
     }
   ];
 
@@ -109,31 +109,31 @@ export class HomeComponent implements OnInit {
     'Emmendingen',
     'Waldkirch',
     'Bad Krozingen',
-    'Muellheim',
+    'Müllheim',
     'Lahr',
     'Offenburg',
-    'Loerrach',
+    'Lörrach',
     'Weil am Rhein',
     'Rheinfelden',
-    'Suedbaden & Umgebung'
+    'Südbaden & Umgebung'
   ];
 
   protected readonly faqItems: FaqItem[] = [
     {
-      question: 'Wie schnell ist BSR Schluesseldienst im Raum Freiburg vor Ort?',
-      answer: 'Je nach Standort und Verkehrslage helfen wir in Freiburg und Suedbaden schnell und regional koordiniert weiter.',
+      question: 'Wie schnell ist BSR Schlüsseldienst im Raum Freiburg vor Ort?',
+      answer: 'Je nach Standort und Verkehrslage helfen wir in Freiburg und Südbaden schnell und regional koordiniert weiter.',
       icon: 'fa-clock',
       isExpanded: true
     },
     {
       question: 'Welche Leistungen bieten Sie an?',
-      answer: 'Zu den Kernleistungen zaehlen Tueroeffnungen, Schloss- und Zylinderwechsel, Schluesselkopien, Mehrfachverriegelungen, Autoschluesselservice, Tresorservice und Briefkastenservice.',
+      answer: 'Zu den Kernleistungen zählen Türöffnungen, Schloss- und Zylinderwechsel, Schlüsselkopien, Mehrfachverriegelungen, Autoschlüsselservice, Tresorservice und Briefkastenservice.',
       icon: 'fa-toolbox',
       isExpanded: false
     },
     {
       question: 'Wie erfahre ich den Preis?',
-      answer: 'Vor dem Einsatz erhalten Sie eine klare telefonische Ersteinschaetzung. Zusaetzlicher Aufwand wird nicht versteckt, sondern nachvollziehbar erklaert.',
+      answer: 'Vor dem Einsatz erhalten Sie eine klare telefonische Ersteinschätzung. Zusätzlicher Aufwand wird nicht versteckt, sondern nachvollziehbar erklärt.',
       icon: 'fa-euro-sign',
       isExpanded: false
     },
