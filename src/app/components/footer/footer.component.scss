@@ -18,6 +18,29 @@
   backdrop-filter: blur(6px);
 }
 
+.footer-link-button {
+  display: inline;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.88);
+  font: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+  cursor: pointer;
+}
+
+.footer-link-button:hover {
+  color: #fff;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 1rem;
+}
+
 @media (max-width: 767px) {
   .footer-lead {
     padding: 0.85rem 0.95rem;

@@ -1,6 +1,7 @@
 export const environment = {
   production: true,
   apiUrl: 'https://bsr-schluesseldienst.de/api',
+  googleAdsTagId: 'AW-17936787460',
   googlePlacesApiKey: '',
   googlePlaceId: '',
   googleBusinessQuery: 'BSR Schlüsseldienst Denzlingen',

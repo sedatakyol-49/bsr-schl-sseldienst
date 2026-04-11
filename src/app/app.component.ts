@@ -4,8 +4,10 @@ import { RouterOutlet, Router, NavigationEnd, ActivatedRoute } from '@angular/ro
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { EmergencyButtonComponent } from './components/emergency-button/emergency-button.component';
+import { CookieConsentComponent } from './components/cookie-consent/cookie-consent.component';
 import { filter } from 'rxjs/operators';
 import { SeoService } from './services/seo.service';
+import { GoogleTagService } from './services/google-tag.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +16,8 @@ import { SeoService } from './services/seo.service';
     RouterOutlet,
     HeaderComponent,
     FooterComponent,
-    EmergencyButtonComponent
+    EmergencyButtonComponent,
+    CookieConsentComponent
   ],
   template: `
     <a class="skip-link" href="#main-content">Zum Inhalt springen</a>
@@ -25,6 +28,7 @@ import { SeoService } from './services/seo.service';
       </main>
       <app-footer></app-footer>
       <app-emergency-button></app-emergency-button>
+      <app-cookie-consent></app-cookie-consent>
     </div>
   `,
 })
@@ -35,8 +39,11 @@ export class AppComponent {
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private seoService: SeoService
+    private seoService: SeoService,
+    private googleTagService: GoogleTagService
   ) {
+    this.googleTagService.initialize();
+
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -45,6 +52,7 @@ export class AppComponent {
       }
 
       this.updateSeo();
+      this.googleTagService.trackPageView();
     });
 
     this.updateSeo();

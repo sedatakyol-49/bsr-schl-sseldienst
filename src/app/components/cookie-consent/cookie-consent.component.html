@@ -1,0 +1,78 @@
+<aside
+  *ngIf="showBanner()"
+  class="cookie-banner"
+  aria-label="Cookie-Einwilligung"
+>
+  <div class="cookie-banner__copy">
+    <p class="cookie-banner__eyebrow">Cookie-Einstellungen</p>
+    <h2 class="cookie-banner__title">Ihre Privatsphäre-Einstellungen</h2>
+    <p>
+      Wir verwenden notwendige Technologien für den Betrieb der Website. Marketing-Cookies und Google Ads
+      zur Messung von Anrufen, WhatsApp-Klicks und Kontaktanfragen aktivieren wir nur mit Ihrer Zustimmung.
+      Details finden Sie in der <a routerLink="/datenschutz">Datenschutzerkl&auml;rung</a>.
+    </p>
+  </div>
+
+  <div class="cookie-banner__actions">
+    <button type="button" class="btn btn-primary" (click)="acceptAll()">Alle akzeptieren</button>
+    <button type="button" class="btn btn-secondary" (click)="rejectOptional()">Nur notwendige</button>
+    <button type="button" class="btn cookie-banner__ghost" (click)="openPreferences()">Einstellungen</button>
+  </div>
+</aside>
+
+<div
+  *ngIf="showPreferences()"
+  class="cookie-modal-backdrop"
+  (click)="closePreferences()"
+  aria-hidden="true"
+></div>
+
+<section
+  *ngIf="showPreferences()"
+  class="cookie-modal"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="cookie-settings-title"
+>
+  <div class="cookie-modal__header">
+    <div>
+      <p class="cookie-banner__eyebrow">Privatsphäre-Center</p>
+      <h2 id="cookie-settings-title" class="cookie-modal__title">Cookie-Einstellungen verwalten</h2>
+    </div>
+    <button type="button" class="cookie-modal__close" (click)="closePreferences()" aria-label="Einstellungen schließen">
+      ×
+    </button>
+  </div>
+
+  <p class="cookie-modal__intro">
+    Sie können Ihre Auswahl jederzeit anpassen. Notwendige Technologien bleiben aktiv, damit die Website korrekt funktioniert.
+  </p>
+
+  <div class="cookie-category">
+    <div class="cookie-category__head">
+      <div>
+        <h3>Notwendig</h3>
+        <p>Erforderlich für Grundfunktionen, Navigation und Sicherheit.</p>
+      </div>
+      <span class="cookie-category__status">Immer aktiv</span>
+    </div>
+  </div>
+
+  <label class="cookie-category cookie-category--interactive">
+    <div class="cookie-category__head">
+      <div>
+        <h3>Marketing &amp; Google Ads</h3>
+        <p>Misst Werbekampagnen und erfasst Leads wie Formulare, Telefon- und WhatsApp-Klicks.</p>
+      </div>
+      <span class="cookie-switch">
+        <input type="checkbox" [(ngModel)]="draftPreferences.marketing" />
+        <span class="cookie-switch__track"></span>
+      </span>
+    </div>
+  </label>
+
+  <div class="cookie-modal__actions">
+    <button type="button" class="btn btn-secondary" (click)="rejectOptional()">Nur notwendige</button>
+    <button type="button" class="btn btn-primary" (click)="savePreferences()">Auswahl speichern</button>
+  </div>
+</section>

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ConsentService } from '../../services/consent.service';
 
 @Component({
   selector: 'app-footer',
@@ -8,4 +9,10 @@ import { RouterLink } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {}
+export class FooterComponent {
+  protected readonly consentService = inject(ConsentService);
+
+  protected openCookieSettings(): void {
+    this.consentService.openPreferences();
+  }
+}

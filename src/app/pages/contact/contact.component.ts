@@ -4,6 +4,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { firstValueFrom } from 'rxjs';
+import { GoogleTagService } from '../../services/google-tag.service';
 
 interface ContactResponse {
   success: boolean;
@@ -28,7 +29,8 @@ export class ContactComponent {
 
   constructor(
     private readonly fb: FormBuilder,
-    private readonly http: HttpClient
+    private readonly http: HttpClient,
+    private readonly googleTagService: GoogleTagService
   ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -73,6 +75,7 @@ export class ContactComponent {
       );
 
       this.submitSuccess = true;
+      this.googleTagService.trackLead('contact_form', 'Kontaktformular');
       this.contactForm.reset({
         name: '',
         email: '',
