@@ -104,8 +104,12 @@ export class ContactComponent {
       }
 
       if (error.status === 0) {
-        return 'Der Server ist derzeit nicht erreichbar. Bitte prüfen Sie die API-Konfiguration oder rufen Sie uns direkt an.';
+        return 'Der Server ist derzeit nicht erreichbar. Bitte pruefen Sie die API-Konfiguration oder rufen Sie uns direkt an.';
       }
+    }
+
+    if (error instanceof Error && error.message.trim()) {
+      return error.message.trim();
     }
 
     return 'Beim Senden ist ein Fehler aufgetreten. Bitte rufen Sie uns direkt an.';

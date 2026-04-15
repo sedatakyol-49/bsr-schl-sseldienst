@@ -12,9 +12,9 @@ export class GoogleTagService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly consentService = inject(ConsentService);
   private readonly tagId = environment.googleAdsTagId;
-  private readonly scriptId = 'google-tag-manager-script';
-
-  private enabled = false;
+  private readonly contactFormSendTo = environment.googleAdsContactFormSendTo;
+  private readonly phoneClickSendTo = environment.googleAdsPhoneClickSendTo;
+  private readonly whatsAppClickSendTo = environment.googleAdsWhatsAppClickSendTo;
   private linkTrackingAttached = false;
 
   initialize(): void {
@@ -22,26 +22,24 @@ export class GoogleTagService {
       return;
     }
 
-    this.setupTag();
-    this.updateConsentMode();
-    this.attachGlobalLinkTracking();
-
-    if (this.consentService.canTrackMarketing()) {
-      this.enableTracking();
-    }
-  }
-
-  enableTracking(): void {
-    if (!this.tagId || !isPlatformBrowser(this.platformId)) {
+    if (!this.hasGtag()) {
       return;
     }
 
     this.updateConsentMode();
+    this.attachGlobalLinkTracking();
 
-    if (this.consentService.canTrackMarketing() && !this.enabled) {
-      this.injectTagScript();
-      this.enabled = true;
+    if (this.consentService.canTrackMarketing()) {
+      this.trackPageView();
     }
+  }
+
+  enableTracking(): void {
+    if (!this.tagId || !isPlatformBrowser(this.platformId) || !this.hasGtag()) {
+      return;
+    }
+
+    this.updateConsentMode();
 
     if (this.consentService.canTrackMarketing()) {
       this.trackPageView();
@@ -49,7 +47,7 @@ export class GoogleTagService {
   }
 
   applyConsent(): void {
-    if (!this.tagId || !isPlatformBrowser(this.platformId)) {
+    if (!this.tagId || !isPlatformBrowser(this.platformId) || !this.hasGtag()) {
       return;
     }
 
@@ -80,6 +78,26 @@ export class GoogleTagService {
       return;
     }
 
+    if (method === 'contact_form' && this.contactFormSendTo) {
+      window.gtag('event', 'conversion', {
+        send_to: this.contactFormSendTo,
+        value: 1,
+        currency: 'EUR'
+      });
+    }
+    const conversionSendTo =
+      method === 'phone' ? this.phoneClickSendTo :
+      method === 'whatsapp' ? this.whatsAppClickSendTo :
+      null;
+
+    if (conversionSendTo) {
+      window.gtag('event', 'conversion', {
+        send_to: conversionSendTo,
+        value: 1,
+        currency: 'EUR'
+      });
+    }
+
     const eventName = method === 'contact_form' ? 'generate_lead' : 'contact';
 
     window.gtag('event', eventName, {
@@ -91,46 +109,17 @@ export class GoogleTagService {
   }
 
   private canTrack(): boolean {
-    return this.enabled
-      && this.consentService.canTrackMarketing()
+    return this.consentService.canTrackMarketing()
       && isPlatformBrowser(this.platformId)
-      && typeof window.gtag === 'function';
+      && this.hasGtag();
   }
 
-  private injectTagScript(): void {
-    if (this.document.getElementById(this.scriptId)) {
-      return;
-    }
-
-    const script = this.document.createElement('script');
-    script.id = this.scriptId;
-    script.async = true;
-    script.src = `https://www.googletagmanager.com/gtag/js?id=${this.tagId}`;
-    this.document.head.appendChild(script);
-  }
-
-  private setupTag(): void {
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = window.gtag || function gtag(...args: unknown[]) {
-      window.dataLayer.push(args);
-    };
-
-    window.gtag('js', new Date());
+  private hasGtag(): boolean {
+    return typeof window.gtag === 'function';
   }
 
   private updateConsentMode(): void {
     const marketingGranted = this.consentService.canTrackMarketing();
-
-    window.gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied',
-      functionality_storage: 'granted',
-      personalization_storage: 'denied',
-      security_storage: 'granted',
-      wait_for_update: 500
-    });
 
     window.gtag('consent', 'update', {
       ad_storage: marketingGranted ? 'granted' : 'denied',
@@ -167,13 +156,65 @@ export class GoogleTagService {
       const href = link.getAttribute('href')?.trim() ?? '';
 
       if (href.startsWith('tel:')) {
-        this.trackLead('phone', this.resolveLinkLabel(link, 'phone'));
+        this.trackExternalLeadClick(event, link, 'phone');
       } else if (href.startsWith('https://wa.me/') || href.startsWith('http://wa.me/')) {
-        this.trackLead('whatsapp', this.resolveLinkLabel(link, 'whatsapp'));
+        this.trackExternalLeadClick(event, link, 'whatsapp');
       }
     });
 
     this.linkTrackingAttached = true;
+  }
+
+  private trackExternalLeadClick(
+    event: Event,
+    link: HTMLAnchorElement,
+    method: 'phone' | 'whatsapp'
+  ): void {
+    if (!this.canTrack()) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const href = link.href;
+    const target = link.target;
+    const source = this.resolveLinkLabel(link, method);
+    let navigated = false;
+
+    const continueNavigation = () => {
+      if (navigated) {
+        return;
+      }
+
+      navigated = true;
+
+      if (target === '_blank') {
+        window.open(href, '_blank', 'noopener,noreferrer');
+      } else {
+        window.location.href = href;
+      }
+    };
+
+    const conversionSendTo = method === 'phone' ? this.phoneClickSendTo : this.whatsAppClickSendTo;
+
+    if (conversionSendTo) {
+      window.gtag('event', 'conversion', {
+        send_to: conversionSendTo,
+        value: 1,
+        currency: 'EUR',
+        event_callback: continueNavigation
+      });
+    }
+
+    window.gtag('event', 'contact', {
+      send_to: this.tagId,
+      method,
+      event_category: 'lead',
+      event_label: source,
+      transport_type: 'beacon'
+    });
+
+    window.setTimeout(continueNavigation, 700);
   }
 
   private resolveLinkLabel(link: HTMLAnchorElement, fallback: string): string {
