@@ -12,6 +12,7 @@ export class GoogleTagService {
   private readonly platformId = inject(PLATFORM_ID);
   private readonly consentService = inject(ConsentService);
   private readonly tagId = environment.googleAdsTagId;
+  private readonly analyticsTagId = environment.googleAnalyticsTagId;
   private readonly contactFormSendTo = environment.googleAdsContactFormSendTo;
   private readonly phoneClickSendTo = environment.googleAdsPhoneClickSendTo;
   private readonly whatsAppClickSendTo = environment.googleAdsWhatsAppClickSendTo;
@@ -71,6 +72,15 @@ export class GoogleTagService {
       page_path: pagePath,
       send_to: this.tagId
     });
+
+    if (this.analyticsTagId) {
+      window.gtag('event', 'page_view', {
+        page_title: this.document.title,
+        page_location: window.location.href,
+        page_path: pagePath,
+        send_to: this.analyticsTagId
+      });
+    }
   }
 
   trackLead(method: 'contact_form' | 'phone' | 'whatsapp', source: string): void {
@@ -106,6 +116,15 @@ export class GoogleTagService {
       event_category: 'lead',
       event_label: source
     });
+
+    if (this.analyticsTagId) {
+      window.gtag('event', eventName, {
+        send_to: this.analyticsTagId,
+        method,
+        event_category: 'lead',
+        event_label: source
+      });
+    }
   }
 
   private canTrack(): boolean {
@@ -132,6 +151,12 @@ export class GoogleTagService {
       window.gtag('config', this.tagId, {
         send_page_view: false
       });
+
+      if (this.analyticsTagId) {
+        window.gtag('config', this.analyticsTagId, {
+          send_page_view: false
+        });
+      }
     }
   }
 
@@ -213,6 +238,16 @@ export class GoogleTagService {
       event_label: source,
       transport_type: 'beacon'
     });
+
+    if (this.analyticsTagId) {
+      window.gtag('event', 'contact', {
+        send_to: this.analyticsTagId,
+        method,
+        event_category: 'lead',
+        event_label: source,
+        transport_type: 'beacon'
+      });
+    }
 
     window.setTimeout(continueNavigation, 700);
   }

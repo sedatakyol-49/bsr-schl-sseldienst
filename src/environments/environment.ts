@@ -2,6 +2,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:4200/api',
   googleAdsTagId: 'AW-17936787460',
+  googleAnalyticsTagId: 'G-36H4N9PQLQ',
   googleAdsContactFormSendTo: 'AW-17936787460/IG9MCOT96pocEITQ9uhC',
   googleAdsPhoneClickSendTo: 'AW-17936787460/fn8zCJf6gJscEITQ9uhC',
   googleAdsWhatsAppClickSendTo: 'AW-17936787460/cG1yCOyShZscEITQ9uhC',
