@@ -8,8 +8,8 @@ export const routes: Routes = [
       scrollToTop: true,
       seo: {
         title: 'BSR Schlüsseldienst | Schlüssel, Schlösser und Sicherheit in Freiburg und Südbaden',
-        description: 'BSR Schlüsseldienst bietet schnelle Hilfe rund um Schlüssel, Schlösser und Sicherheit in Freiburg, Denzlingen und der Region Südbaden.',
-        keywords: 'BSR Schlüsseldienst, Schlüsseldienst Freiburg, Schlüsselnotdienst Freiburg, Schlosswechsel, Sicherheit Südbaden'
+        description: 'BSR Schlüsseldienst bietet schnelle Hilfe rund um Schlüssel, Schlösser, Kfz-Service, Schließanlagen und Sicherheitstechnik in Freiburg, Denzlingen und Südbaden.',
+        keywords: 'BSR Schlüsseldienst, Schlüsseldienst Freiburg, Schlüsselnotdienst Freiburg, Schlosswechsel, Schließanlagen, Sicherheitstechnik Südbaden'
       }
     }
   },
@@ -32,8 +32,8 @@ export const routes: Routes = [
       scrollToTop: true,
       seo: {
         title: 'Leistungen | BSR Schlüsseldienst',
-        description: 'Türöffnungen, Schlosswechsel, Zylinderwechsel und Reparaturen an Türen und Beschlägen für Freiburg und Südbaden.',
-        keywords: 'Leistungen Schlüsseldienst, Türöffnung, Zylinderwechsel, Schlosswechsel Freiburg'
+        description: 'Türöffnungen, Kfz-Service, Schlüsselkopien, Schließanlagen, Zylinderwechsel, Sicherheitstechnik und elektrische Schließsysteme für Freiburg und Südbaden.',
+        keywords: 'Leistungen Schlüsseldienst, Türöffnung, Zylinderwechsel, Schließanlagen, Sicherheitstechnik Freiburg'
       }
     }
   },
@@ -44,8 +44,8 @@ export const routes: Routes = [
       scrollToTop: true,
       seo: {
         title: 'Preisliste | BSR Schlüsseldienst',
-        description: 'Transparente Preisliste von BSR Schlüsseldienst für Türöffnungen, Zusatzzeiten, Zylinderwechsel und Reparaturen.',
-        keywords: 'Preisliste Schlüsseldienst, Türöffnung Preise, Schlüsseldienst Kosten Freiburg'
+        description: 'Transparente Preisliste von BSR Schlüsseldienst für Türöffnungen, Kfz-Service, Schließanlagen, Montagearbeiten, Zusatzzeit und Anfahrt.',
+        keywords: 'Preisliste Schlüsseldienst, Türöffnung Preise, Kfz Türöffnung, Schließanlagen Kosten Freiburg'
       }
     }
   },

@@ -146,20 +146,50 @@ export class SeoService {
               },
               {
                 '@type': 'Offer',
-                itemOffered: { '@type': 'Service', name: 'Türöffnung zugefallene Tür (Mo-Sa 18:00-08:00)' },
+                itemOffered: { '@type': 'Service', name: 'Türöffnung zugefallene Tür (Mo-Sa 18:00-22:00)' },
                 price: '109',
                 priceCurrency: 'EUR'
               },
               {
                 '@type': 'Offer',
-                itemOffered: { '@type': 'Service', name: 'Türöffnung abgeschlossene Tür (Mo-Fr 08:00-18:00)' },
+                itemOffered: { '@type': 'Service', name: 'Türöffnung zugefallene Tür (Mo-Sa 22:00-08:00)' },
+                price: '129',
+                priceCurrency: 'EUR'
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: 'Türöffnung abgeschlossene Tür (Mo-Sa 08:00-18:00)' },
                 price: '119',
                 priceCurrency: 'EUR'
               },
               {
                 '@type': 'Offer',
-                itemOffered: { '@type': 'Service', name: 'Zusatzarbeitszeit je Stunde' },
+                itemOffered: { '@type': 'Service', name: 'Türöffnung abgeschlossene Tür (Mo-Sa 18:00-22:00)' },
+                price: '139',
+                priceCurrency: 'EUR'
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: 'Türöffnung abgeschlossene Tür (Mo-Sa 22:00-08:00)' },
+                price: '159',
+                priceCurrency: 'EUR'
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: 'Fahrzeugtüröffnung' },
+                price: '149',
+                priceCurrency: 'EUR'
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: 'Zusatzarbeitszeit je angef. Std.' },
                 price: '89',
+                priceCurrency: 'EUR'
+              },
+              {
+                '@type': 'Offer',
+                itemOffered: { '@type': 'Service', name: 'Anfahrtskosten ab 20 km' },
+                price: '29',
                 priceCurrency: 'EUR'
               }
             ]

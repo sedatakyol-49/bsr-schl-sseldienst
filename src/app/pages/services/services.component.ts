@@ -34,9 +34,9 @@ export class ServicesComponent {
       description: 'Wenn Schlüssel verloren gehen, Zylinder verschleißen oder nach einem Mieterwechsel schnell gehandelt werden muss, sorgen wir für passende Austauschlösungen.',
       icon: 'fa-key',
       items: [
-        'Austausch defekter oder unsicherer Profilzylinder',
-        'Wechsel von Schloss, Beschlag und Schließkomponenten',
-        'Sinnvoll nach Einbruch, Defekt, Verlust oder Nutzerwechsel'
+        'Profilschließzylinder-Wechsel mit passender Materialabstimmung',
+        'Schloss- und Beschlagwechsel nach Defekt, Einbruch oder Nutzerwechsel',
+        'Austausch und Reparatur von Mehrfachverriegelungen'
       ]
     },
     {
@@ -46,7 +46,7 @@ export class ServicesComponent {
       items: [
         'Haus-, Wohnungs- und Nebenschlüssel als Zweit- oder Ersatzschlüssel',
         'Schlüsselkopien für viele gängige Schließanlagen und Systemschlüssel',
-        'Praktisch für Familien, Hausverwaltungen, Büro und Vermietung'
+        'Sonderbestellungen und Aufbewahrungsservice nach individueller Abstimmung'
       ]
     },
     {
@@ -84,9 +84,19 @@ export class ServicesComponent {
       description: 'Wir beraten zu mechanischer Absicherung, passenden Schließsystemen und alltagstauglichen Sicherheitslösungen für Wohn- und Gewerbeobjekte.',
       icon: 'fa-shield-halved',
       items: [
-        'Beratung zu Schließsystemen, Zusatzsicherungen und Beschlägen',
-        'Lösungen für Wohnung, Einfamilienhaus, Mehrfamilienhaus und Gewerbe',
-        'Praktische Empfehlungen statt überladener Technikpakete'
+        'Montage von Panzerriegeln, Zusatzkastenschlössern und Schutzrosetten',
+        'Türschließer, Bolzen, Riegel, Bandseitensicherung und Türspion-Montage',
+        'Praktische Empfehlungen für Wohnung, Haus, Mehrfamilienhaus und Gewerbe'
+      ]
+    },
+    {
+      title: 'Schließanlagen und elektrische Systeme',
+      description: 'Für Objekte, Gewerbe und Hausverwaltungen übernehmen wir Schließanlagen, elektrische Schließsysteme und Zugangslösungen nach individueller Planung.',
+      icon: 'fa-microchip',
+      items: [
+        'Einbau und Wartungsverträge für Schließanlagen',
+        'Installation und Instandsetzung elektrischer Schließsysteme',
+        'Zutrittskontrollsysteme, Transponder-Programmierung und Batteriewechsel'
       ]
     },
     {
@@ -95,6 +105,7 @@ export class ServicesComponent {
       icon: 'fa-envelope-open-text',
       items: [
         'Öffnung und Reparatur von Briefkästen und Briefkastenanlagen',
+        'Montage von Briefkästen und objektbezogenen Schließlösungen',
         'Unterstützung für Wohnobjekte, Hausverwaltungen und Gewerbe',
         'Klare Abläufe bei Austausch, Nachrüstung und Instandsetzung'
       ]

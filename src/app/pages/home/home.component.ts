@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit {
 
   protected readonly introParagraphs = [
     'Willkommen bei BSR Schlüsseldienst, Ihrem zertifizierten Partner für Schlüssel- und Sicherheitstechnik. Wir bieten professionelle Betreuung in Freiburg und Südbaden - diskret, effizient und mit hohem Qualitätsanspruch.',
-    'Neben schnellen Notöffnungen umfasst unser Angebot auch Schlüsselkopien, Mehrfachverriegelungen, Autoschlüsselservice, Tresorservice und klassische Schließ- und Reparaturarbeiten für Privatkunden, Gewerbe und Hausverwaltungen.'
+    'Neben schnellen Notöffnungen umfasst unser Angebot auch Schlüsselkopien, Schließanlagen, Mehrfachverriegelungen, Autoschlüsselservice, Montagearbeiten, elektrische Schließsysteme und klassische Reparaturarbeiten für Privatkunden, Gewerbe und Hausverwaltungen.'
   ];
 
   protected readonly serviceCards: ServiceCard[] = [
@@ -82,6 +82,24 @@ export class HomeComponent implements OnInit {
       description: 'Tresoröffnungen, Bestellung und Einbau sowie Wartung für Privatkunden, Kanzleien, Praxen und Gewerbe.',
       icon: 'fa-toolbox',
       highlights: ['Öffnung bei Defekt oder Verlust', 'Beratung zu passender Lösung']
+    },
+    {
+      title: 'Sicherheitstechnik',
+      description: 'Montage von Panzerriegeln, Zusatzkastenschlössern, Schutzrosetten, Türschließern und weiteren Sicherungen.',
+      icon: 'fa-shield-halved',
+      highlights: ['Mechanische Zusatzsicherungen', 'Montage mit Materialabstimmung']
+    },
+    {
+      title: 'Elektrische Schließsysteme',
+      description: 'Installation, Wartung und Instandsetzung elektrischer Systeme sowie Zutrittskontrolle und Transponder-Programmierung.',
+      icon: 'fa-microchip',
+      highlights: ['Zutrittskontrollsysteme', 'Service nach individuellem Angebot']
+    },
+    {
+      title: 'Briefkastenservice',
+      description: 'Öffnung, Reparatur, Austausch und Montage von Briefkästen und Briefkastenanlagen.',
+      icon: 'fa-envelope-open-text',
+      highlights: ['Briefkasten Montage', 'Objekte und Hausverwaltungen']
     }
   ];
 
@@ -97,7 +115,7 @@ export class HomeComponent implements OnInit {
       description: 'Je nach Aufwand, Uhrzeit und Türsituation klar abgestimmt.'
     },
     {
-      title: 'Schloss- oder Zylinderwechsel',
+      title: 'Profilschließzylinder-Wechsel',
       price: 'ab 89 EUR',
       description: 'Material und Ausführung werden nachvollziehbar eingeordnet.'
     }
@@ -127,7 +145,7 @@ export class HomeComponent implements OnInit {
     },
     {
       question: 'Welche Leistungen bieten Sie an?',
-      answer: 'Zu den Kernleistungen zählen Türöffnungen, Schloss- und Zylinderwechsel, Schlüsselkopien, Mehrfachverriegelungen, Autoschlüsselservice, Tresorservice und Briefkastenservice.',
+      answer: 'Zu den Kernleistungen zählen Türöffnungen, Schloss- und Zylinderwechsel, Schlüsselkopien, Schließanlagen, Autoschlüsselservice, Montage von Sicherheitstechnik, elektrische Schließsysteme und Briefkastenservice.',
       icon: 'fa-toolbox',
       isExpanded: false
     },
